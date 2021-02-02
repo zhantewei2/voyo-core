@@ -1,0 +1,5 @@
+@import "~@voyo/core-style/lib/components-dep";
+
+.voyo-page{
+  @include PageBase();
+}

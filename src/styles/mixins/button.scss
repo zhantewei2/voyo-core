@@ -1,0 +1,114 @@
+@mixin BaseBtn{
+    box-sizing: border-box;
+    outline:none;
+    position:relative;
+    appearance:none;
+    border:none;
+    display:inline-block;
+    text-align: center;
+    cursor:pointer;
+    line-height:1;
+    -webkit-tap-highlight-color: transparent;
+    &:focus{
+        outline:none;
+    }
+    overflow:hidden;
+    user-select: none;
+    letter-spacing: 1px;
+    @include Transition($attrs:background,$timer:.2s ease);
+}
+%base-btn{
+   @include BaseBtn();
+}
+
+@mixin BtnAppear($variousName){
+    $fontColor:map-get($color-font-various,$variousName);
+    $bgColor:map-get($color-various,$variousName);
+    $bgColorLight:map-get($color-light-various,$variousName);
+    $borderColor:map-get($color-border-various,$variousName);
+    &.__#{$variousName}{
+        @include Disabled(appear);
+        @include LinearBg($use-btn-linear,$bgColor,$bgColorLight);
+        @include Shadow(appearBtn,$bgColor);
+        color:$fontColor;
+        border:1px solid transparent;
+        &.ripple-callback{
+            @include Shadow(appearBtnCallback,$bgColor);
+        }
+        .ripple-btn{
+            @include UseRipple(deep);
+        }
+    }
+}
+
+@mixin BtnOutline($variousName){
+    $bgColor:map-get($color-various,$variousName);
+    $borderColor:map-get($color-border-various,$variousName);
+    &.__#{$variousName}{
+        @include Disabled(outline);
+        @include Shadow(outlineBtn,$bgColor);
+        border:1px solid $borderColor;
+        background:transparent;
+        color:$bgColor;
+        .ripple-btn{
+            @include UseRipple();
+        }
+        &.ripple-callback{
+            @include Shadow(outlineBtnCallback,$bgColor);
+        }
+    }
+}
+
+@mixin BtnPure($variousName){
+    $fontColor:map-get($color-various,$variousName);
+    &.__#{$variousName}{
+        @include Disabled(pure);
+        background: transparent;
+        color:$fontColor;
+        .ripple-btn{
+            @include UseRipple();
+        }
+    }
+}
+@mixin BtnCandy($variousName){
+    $bgColor:map-get($color-gentle-various,$variousName);
+    $fontColor:map-get($color-various,$variousName);
+    &.__#{$variousName}{
+        @include Disabled(candy);
+        border:1px solid transparent;
+        background: $bgColor;
+        color:$fontColor; 
+        .ripple-btn{
+            @include UseRipple();
+        }
+        &.__active{
+            border-color:$fontColor;
+        }
+    }
+}
+
+@mixin BtnSize($k,$sizeValue){
+    // font-size:$sizeValue;
+    // padding:$sizeValue*0.7 $sizeValue*0.8;
+    font-size:$sizeValue;
+    //padding:calc(#{$sizeValue} * .7) calc(#{$sizeValue} * .8);
+    padding: .7em .8em;
+    @if $k == "mini"{
+        min-width: 1em;
+    }
+    @else{
+        min-width:5em;
+    }
+}
+
+@mixin BtnIconSize($sizeValue){
+    font-size:$sizeValue;
+    i{
+        // font-size:$sizeValue*1.3;
+        font-size:1.3em;
+    }
+    // height:$sizeValue*3;
+    // width:$sizeValue*3;
+    height:3em;
+    width:3em;
+}

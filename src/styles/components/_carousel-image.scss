@@ -1,0 +1,21 @@
+.voyo-carousel-image-bar{
+    position:absolute;
+    z-index:1;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:$--voyo-carousel-image-bar-bottom;
+    & .-thumb{
+        background:var(--color-bg);
+        height:$--voyo-carousel-image-thumb-h;
+        width:$--voyo-carousel-image-thumb-w;
+        margin:$--voyo-carousel-image-thumb-margin;
+        display:inline-block;
+        @include Radius();
+        @include Transition();
+        opacity:0.5;
+        &.active{
+            opacity:1;
+        }
+    }
+
+}

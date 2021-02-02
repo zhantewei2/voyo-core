@@ -1,0 +1,40 @@
+@mixin Ripple($color:null,$color-various:null){
+  $value:null;
+  @if $color==null {
+    @if $color-various == "deep"{
+      $value: var(--color-ripple-deep-bg) var(--color-ripple-deep-bubbling) var(--color-ripple-deep-hover);
+    }
+    @else if $color-various == "light"{
+      $value: var(--color-ripple-light-bg) var(--color-ripple-light-bubbling) var(--color-ripple-light-hover);
+    }
+  }
+  @else{
+    $value: rgba($color,.2) rgba($color,2) rgba($color,.1);
+  }
+  $bgColor:nth($value,1);
+  $bubblingColor:nth($value,2);
+  $hoverColor:nth($value,3);
+  //&:hover{
+    //background-color:$hoverColor;
+  //}
+  &.ripple-active{
+    background-color:$bgColor;
+  }
+  .ripple-bubbling{
+    background:$bubblingColor;
+  }
+}
+%ripple-deep{
+  @include Ripple(null,deep);
+}
+%ripple-light{
+  @include Ripple(null,light);
+}
+@mixin UseRipple($theme:"light"){
+  @if $theme == "deep" {
+    @extend %ripple-deep;
+  }
+  @else if $theme == "light"{
+    @extend %ripple-light;
+  }
+}

@@ -1,0 +1,7 @@
+.voyo-bg-blur{
+  @include Transition(transform,sudden);
+  &.blur{
+    filter:blur($voyo-bg-blur);
+    transform:scale3d(1.1,1.1,1.1);
+  }
+}

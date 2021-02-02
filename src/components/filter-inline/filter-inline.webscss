@@ -1,0 +1,31 @@
+@import "~@voyo/core-style/lib/components-dep";
+.container{
+  display:flex;
+  user-select: none;
+  height:2.5rem;
+  overflow:hidden;
+}
+.wrapper{
+  @include Flex-1();
+  overflow:hidden;
+  white-space: nowrap;
+  text-align: right;
+  display:flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding:.5rem 0;
+}
+.view{
+  display:inline-block;
+  white-space: nowrap;
+  min-width:100%;
+}
+.suffix{
+  padding-left:.5rem;
+  padding-right:.5rem;
+  position:relative;
+  display:inline-flex;
+  align-items: center;
+  text-align: center;
+  box-shadow: -6px 0px 12px -3px var(--shadow-color);
+}

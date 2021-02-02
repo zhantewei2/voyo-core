@@ -1,0 +1,58 @@
+@mixin Assembly($map){
+  @each $k,$v in $map{
+    @if $k=='color'{
+      color:$v;
+    }@else if $k == 'm'{
+      margin:$v;
+    }@else if $k == 'p'{
+      padding:$v;
+    }@else if $k == 'mt'{
+      margin-top:$v;
+    }
+    @else if $k == 'marginLeft'{
+      margin-left:$v;
+    }@else if $k == 'marginRight'{
+      margin-right:$v;
+    }@else if $k == 'marginX'{
+      margin-left:$v;
+      margin-right:$v;
+    }@else if $k == 'marginY'{
+      margin-top:$v;
+      margin-bottom:$v;
+    }@else if $k == 'marginB'{
+      margin-bottom:$v;
+    }@else if $k == 'paddingR'{
+      padding-right:$v;
+    }@else if $k == 'paddingX'{
+      padding-left:$v;
+      padding-right:$v;
+    }@else if $k == 'paddingY'{
+      padding-top:$v;
+      padding-bottom:$v;
+    }@else if $k == 'radius'{
+      @include Radius($v);
+    }@else if $k == 'useRadius'{
+      @include Radius();
+    }@else if $k == 'height'{
+      height:$v;
+    }@else if $k == 'centerHeight'{
+      line-height: $v;
+    }@else if $k == 'fontSize'{
+      font-size:$v;
+    }@else if $k == 'block'{
+      display:block;
+    }@else if $k == 'border'{
+      border:$v;
+    }@else if $k == 'shapeWH'{
+      height:$v;
+      width:$v;
+    }@else if $k == 'iconSize'{
+      i.fa{
+        font-size:$v;
+      }
+    }@else if $k == 'bg'{
+      background: $v;
+    }
+  }
+
+}

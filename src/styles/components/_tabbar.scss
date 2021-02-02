@@ -1,0 +1,37 @@
+.yoyo-tabbar_{
+  height:$--voyo-tabbar-height;
+}
+.voyo-tabbar{
+  @extend .yoyo-tabbar_;
+  position:fixed;
+  width:100%;
+  left:0;
+  bottom:0;
+  background:$--voyo-tabbar-background;
+  display:flex;
+  z-index:$--voyo-tabbar-z-index;
+  @include Shadow(tabbar);
+  .voyo-tabbar-item{
+    @include ICenter();
+    @include Flex-auto();
+    flex-flow:column;
+    .voyo-tabbar-item-icon{
+      i{
+        font-size:$--voyo-tabbar-icon-size;
+        color:var(--color-font-brand);
+        //color:var(--color-font-title);
+      }
+    }
+    .voyo-tabbar-item-title{
+      @include text-brand(mini);
+    }
+    &.active{
+      .voyo-tabbar-item-title{
+        color:var(--color-primary);
+      }
+      .voyo-tabbar-item-icon i{
+        color:var(--color-primary);
+      }
+    }
+  }
+}

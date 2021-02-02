@@ -1,0 +1,47 @@
+@mixin Shadow($various,$color:var(--shadow-color)){
+  @if $use-shadow{
+    @if $various == "appearBtn"{
+      box-shadow: 0 1px 8px -2px $color;
+    }
+    @else if $various == "outlineBtn"{
+
+    }
+    @else if $various == "pureBtn"{
+
+    }
+    @else if $various == "candyBtn" {
+
+    }
+    @else if $various == "appearBtnCallback"{
+      box-shadow: 0 4px 16px -6px $color;
+    }
+    @else if $various == "outlineBtnCallback"{
+      box-shadow: 0 4px 16px -6px $color;
+    }
+    @else if $various == "toast"{
+      box-shadow: 0 6px 20px -12px $color, 0 2px 12px -5px $color;
+    }
+    @else if $various == "dialog"{
+      box-shadow: 0 6px 20px -12px var(--color-bg-deep);
+    }
+
+  }
+  @else if $use-block-shadow{
+    @if $various == "tabbar"{
+      box-shadow: 0 -3px 12px 1px var(--shadow-color-tabbar);
+    }
+      //header tabbar
+    @else if $various == "tabBar"{
+      box-shadow: 0 3px 12px -3px var(--shadow-color-tabbar);
+    }
+    @else if $various == "card"{
+      box-shadow:0 8px 24px -10px rgba(0,0,0,0.1);
+    }
+    @else if $various == "tap"{
+      box-shadow:0 4px 16px -10px var(--color-bg-deep3);
+    }
+    @else if $various == "toastStrong"{
+      box-shadow:0 8px 26px -12px var(--color-bg-deep3);
+    }
+  }
+}

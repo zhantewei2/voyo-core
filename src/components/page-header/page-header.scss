@@ -1,0 +1,22 @@
+@import "~@voyo/core-style/lib/components-dep";
+
+.voyo-page-header_{
+  height:var(--page-header-h);
+}
+.voyo-page-header{
+  @extend .voyo-page-header_;
+  @include Transition(background);
+  background-color:var(--color-header-bg);
+  z-index:$--voyo-page-header-z-index;
+  &.autoTransition{
+    background-color:transparent;
+  }
+  &.whiteToDark{
+    &.autoTransition-strict{
+      color:white;
+    }
+    &.autoTransition-open{
+      background-color:var(--color-header-bg);
+    }
+  }
+}

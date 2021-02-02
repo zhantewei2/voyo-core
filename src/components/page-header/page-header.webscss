@@ -1,0 +1,46 @@
+@import "~@voyo/core-style/lib/components-dep";
+
+.voyo-page-header-wrapper{
+  display:flex;
+  .left,.right{
+    width:25%;
+    @include IMid();
+    padding:$--voyo-page-header-adapter-padding;
+  }
+  .title{
+    @include ICenter();
+    text-align: center;
+    flex:auto;
+    position:relative;
+  }
+  .title-content{
+    @include Full();
+    @include Center();
+    display:none;
+    &.show{
+     display:flex;
+    }
+  }
+
+  .back-img{
+    height:1.2rem;
+  }
+  .voyo-header-title-content-open{
+    display:none;
+  }
+}
+.voyo-animation-fade-enter{
+  opacity:0;
+  transform:translate3d(0,-10%,0);
+}
+.voyo-animation-fade-enter-active{
+  transition:all .3s ease;
+}
+.voyo-animation-fade-enter-to{
+  opacity:1;
+}
+.voyo-animation-fade-leave-active{
+  opacity:0;
+  transform: translate3d(0,-10%,0);
+  transition:all .3s ease;
+}

@@ -1,0 +1,152 @@
+@mixin Index($k){
+  z-index:map-get($voyo-index,$k);
+}
+@mixin Center(){
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+@mixin Between(){
+  display: flex;
+  justify-content: space-between;
+}
+@mixin CenterColumn(){
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  flex-flow:column;
+}
+@mixin ICenter(){
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin ICenterColumn(){
+  @include ICenter();
+  flex-flow: column;
+}
+
+@mixin IMid(){
+  display: inline-flex;
+  align-items: center;
+}
+@mixin Ellipsis($width:null){
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  @if $width{
+    width:$width;
+  }
+}
+@mixin Flex-auto(){
+  flex:auto;
+}
+@mixin Flex-1(){
+  flex-grow: 1;
+  flex-basis: 0;
+}
+@mixin Radius($v:var(--radius-base),$type:normal){
+  @if $use-radius{
+    @if $type== "medium"{
+      border-radius:var(--radius-medium);
+    }
+    @else if $type== "large"{
+      border-radius:var(--radius-large);
+    }@else{
+      border-radius:$v;
+    }
+  }
+}
+@mixin Padding($size:now){
+  $value:map-get($size-map,$size);
+  padding:$value;
+}
+
+@mixin TapSide(){
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+@mixin Full(){
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+@mixin Transition($attrs:all,$timer:.3s ease-out,$type:normal){
+  @if $type == "normal"{
+    transition:$attrs $timer;
+  }
+  @else if $type == "slide-out"{
+    transition:$attrs .4s $easeOutQuad;
+  }
+  @else if $type == "slide-in"{
+    transition:$attrs .3s $ease;
+  }
+  @else if $type == "fast" {
+    transition:$attrs .2s ease;
+  }
+  @else if $type == "back-out"{
+    transition:$attrs .2s ease-out;
+  }
+  @else if $type == "sudden"{
+    transition:$attrs .15s ease-out;
+  }
+  @else if $type == "comfort-in"{
+    transition:$attrs .2s $voyo-in-timer;
+  }
+}
+@mixin Animation($animationName,$type){
+
+  @if $type== 'normal'{
+    animation:$animationName .3s ease-out;
+  }
+  @else if $type=='fast'{
+    animation:$animationName .2s ease;
+  }
+  @else if $type== 'comfort-in'{
+    animation:$animationName .3s $voyo-in-timer;
+  }
+  @else if $type== 'comfort-out'{
+    animation:$animationName .3s $voyo-out-timer;
+  }
+}
+@mixin IconVertical(){
+  i,.icon{
+    vertical-align: middle;
+  }
+}
+@mixin IconRight(){
+  i,.icon{
+    padding-left:$--voyo-icon-space;
+  }
+}
+@mixin IconLeft(){
+  i,.icon{
+    padding-right:$--voyo-icon-space;
+  }
+}
+@mixin Layout($indexType,$bgColor:transparent,$opacity:$--voyo-layout-opacity,$position:fixed){
+  position:$position;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:transparent;
+  z-index:map-get($voyo-index,$indexType);
+  ._layout-bg{
+    background:$bgColor;
+    z-index:-1;
+    opacity:$opacity;
+    @include Full();
+    @include Transition();
+  }
+}
+@mixin ClearFloat(){
+  &::after{
+    content:"";
+    display:block;
+    clear:both;
+  }
+}

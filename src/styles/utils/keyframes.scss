@@ -1,0 +1,14 @@
+@keyframes KeyframeToMid{
+  from{}
+  to{transform:translate3d(0,0,0)}
+}
+
+@keyframes KeyframeToRight {
+  from{}
+  to{transform:translate3d(100%,0,0)}
+}
+
+@keyframes KeyframeToLeft {
+  from {}
+  to{transform: translate3d(-100%,0,0)}
+}

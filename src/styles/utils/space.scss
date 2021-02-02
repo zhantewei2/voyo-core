@@ -1,0 +1,44 @@
+@for $i from 1 through 5{
+  $v:$i*$--voyo-space-base;
+  .m-#{$i}{
+    margin:$v;
+  }
+  .mt-#{$i}{
+    margin-top:$v;
+  }
+  .mb-#{$i}{
+    margin-bottom:$v;
+  }
+  .ml-#{$i}{
+    margin-left:$v;
+  }
+  .mr-#{$i}{
+    margin-right:$v;
+  }
+  .mx-#{$i}{
+    margin-left:$v;
+    margin-right:$v;
+  }
+  .my-#{$i}{
+    margin-top:$v;
+    margin-bottom:$v;
+  }
+  .p-#{$i}{
+    padding:$v;
+  }
+  .px-#{$i}{
+    padding-left:$v;
+    padding-right:$v;
+  }
+  .py-#{$i}{
+    padding-top:$v;
+    padding-bottom:$v;
+  }
+  .pt-#{$i}{
+    padding-top:$v;
+  }
+  .pb-#{$i}{
+    padding-bottom:$v;
+  }
+
+}

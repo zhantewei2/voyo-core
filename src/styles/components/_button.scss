@@ -1,0 +1,64 @@
+%btn{
+    &~.btn:not(.voyo-btn-block){
+        margin-left:$--voyo-btn-distance;
+    }
+}
+.voyo-btn{
+    @extend %btn;
+    @extend %base-btn;
+    @include Radius();
+    i{
+        vertical-align: middle;
+        &:first-child{
+            margin-right:$--voyo-btn-icon-dis;
+        }
+        &:last-child{
+            margin-left:$--voyo-btn-icon-dis;
+        }
+    }
+    //min-width:$--voyo-btn-min-width;
+}
+.voyo-btn-icon{
+    @extend %btn;
+    @extend %base-btn;
+    @include ICenter();
+    border-radius:50%;
+}
+
+.voyo-btn-round{
+    border-radius:$--voyo-btn-round-radius;
+}
+
+@each $k,$v in $--voyo-btn-size{
+    .voyo-btn-size-#{$k}{
+        @include BtnSize($k,$v);
+    }
+    .voyo-btn-icon-size-#{$k}{
+        @include BtnIconSize($v);
+    }
+}
+.voyo-btn-block{
+    width:100%;
+    .content{
+        letter-spacing: $--voyo-btn-block-spacing;
+        padding-left: $--voyo-btn-block-spacing;
+        font-weight: bold;
+        font-size:$--voyo-btn-block-font-size;
+    }
+    padding:$--voyo-btn-block-padding;
+}
+
+@each $k,$v in $--voyo-btn-colors{
+    .voyo-btn-appear{
+        @include BtnAppear($k);
+    }
+    .voyo-btn-outline{
+        @include BtnOutline($k);
+    }
+    .voyo-btn-pure{
+        @include BtnPure($k);
+    }
+    .voyo-btn-candy{
+        @include BtnCandy($k);
+    }
+}

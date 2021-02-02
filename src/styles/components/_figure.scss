@@ -1,0 +1,20 @@
+.voyo-figure{
+  display:flex;
+  justify-content: center;
+  flex-flow:column;
+  padding:$--voyo-figure-padding;
+  ._image{
+    width:$--voyo-figure-image-height;
+    height:$--voyo-figure-image-width;
+    margin:0 auto;
+  }
+  ._title{
+    padding:$--voyo-figure-title-padding;
+    @include text-content(small);
+    text-align: center;
+  }
+  ._content{
+    padding:$--voyo-figure-content-padding;
+    text-align: center;
+  }
+}

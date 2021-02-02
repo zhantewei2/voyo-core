@@ -1,0 +1,65 @@
+.touch-scroll{
+  -webkit-overflow-scrolling: touch;
+}
+.no-padding{
+  padding:0 !important;
+}
+.no-margin{
+  margin:0 !important;
+}
+.no-radius{
+  border-radius: 0 !important;
+}
+.no-padding-x{
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+.abs-full{
+  @include Full();
+}
+.no-display{
+  display:none !important;
+}
+.slide-right{
+  transform:translate3d(100%,0,0);
+}
+.slide-left{
+  transform: translate3d(-100%,0,0);
+}
+.slide-mid{
+  transform:translate3d(0,0,0);
+}
+.carousel-page{
+  @extend .abs-full;
+  contain:strict;
+  will-change: transform;
+  opacity:1;
+  overflow-y:auto;
+}
+.carousel-container{
+  position:relative;
+  display:block;
+  overflow:hidden;
+  width:100%;
+}
+.img-cover{
+  background-size:cover;
+}
+.scroll-container{
+  @extend .abs-full;
+  overflow-y:auto;
+}
+.pre-content{
+  margin:0;
+  padding:0;
+  font-family: $font-family;
+  line-height:$line-height-content;
+  word-break:break-all;
+  box-sizing: border-box;
+}
+.ellipsis{
+  @include Ellipsis();
+}
+.rel{
+  position:relative;
+}

@@ -1,0 +1,39 @@
+%appear-disabled{
+    background:var(--color-disabled) !important;
+    color:var(--color-disabled-font) !important;
+    border:var(--color-disabled-border) !important;
+    box-shadow: none !important;
+}
+%outline-disabled{
+    border-color:var(--color-disabled-border) !important;
+    color:var(--color-disabled-font) !important;
+    box-shadow:none !important;
+}
+%pure-disabled{
+    color:var(--color-disabled-font) !important;
+}
+%candy-disabled{
+    background:var(--color-disabled-light) !important;
+    color: var(--color-disabled-font) !important;
+    i{
+        color:var(--color-disabled-font) !important;
+    }
+}
+
+@mixin Disabled($various){
+    &[disabled]:not([disabled="0"]){
+        cursor:not-allowed;
+        @if $various == "appear"{
+            @extend %appear-disabled;
+        }
+        @else if $various == "outline" {
+            @extend %outline-disabled;
+        }
+        @else if $various == "pure"{
+            @extend %pure-disabled;     
+        }
+        @else if $various == "candy" {
+            @extend %candy-disabled;
+        }
+    }
+}

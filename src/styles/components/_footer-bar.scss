@@ -1,0 +1,18 @@
+.voyo-footer-bar{
+  @include Center();
+  @include Shadow(tabbar);
+  justify-content: space-between;
+  height:$--voyo-footer-bar-height;
+  z-index:map-get($voyo-index,footerBar);
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:$--voyo-footer-bar-bg;
+  padding:$--voyo-footer-bar-padding;
+  box-sizing: border-box;
+}
+
+._voyo-footer-bar{
+  height:$--voyo-footer-bar-height;
+}

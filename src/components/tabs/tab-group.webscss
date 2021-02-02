@@ -1,0 +1,4 @@
+@import "~@voyo/core-style/lib/components-dep";
+.voyo-tab-group{
+  @include Full();
+}

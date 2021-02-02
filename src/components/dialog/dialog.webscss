@@ -1,0 +1,3 @@
+@import "~@voyo/core-style/lib/components-dep";
+@import "~@voyo/core-style/lib/components/dialog";
+@import "~@voyo/core-style/lib/components/ripple";

@@ -1,0 +1,9 @@
+@each $k,$v in $voyo-icon-size{
+  .voyo-icon-#{$k}{
+    font-size:$v;
+  }
+}
+
+.voyo-icon-line{
+  font-weight: bold;
+}

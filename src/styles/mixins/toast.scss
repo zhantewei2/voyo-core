@@ -1,0 +1,16 @@
+@mixin Toast($bgColor,$fontColor){
+  background-color:$bgColor;
+  color:$fontColor;
+  position:fixed;
+  text-align: center;
+  @include Index(toast);
+  @include Radius();
+  @include Shadow(toast,$bgColor);
+  left:50%;
+  bottom:$--voyo-toast-bottom;
+  min-width:$--voyo-toast-min-width;
+  max-width:$--voyo-toast-max-width;
+  padding:$--voyo-toast-padding;
+  box-sizing: border-box;
+  font-size:$--voyo-toast-font-size;
+}

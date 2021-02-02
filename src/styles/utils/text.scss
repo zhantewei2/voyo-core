@@ -1,0 +1,37 @@
+.voyo-text-title{
+  font-weight: bold;
+  @include text-title(now);
+}
+.voyo-text-content{
+  @include text-content(small);
+}
+.voyo-text-brand{
+  @include text-brand(large);
+}
+.voyo-text-des{
+  @include text-des(mini);
+}
+
+.voyo-text-brand-white{
+  @include text-brand(large,true);
+}
+.voyo-text-des-white{
+  @include text-des(mini,true);
+}
+.text-center{
+  text-align: center;
+}
+.text-bold{
+  font-weight: bold;
+}
+
+@each $k,$v in $size-map{
+  .voyo-text-size-#{$k}{
+    font-size:$v;
+  }
+}
+@each $k,$v in $font-colors{
+  .voyo-text-color-#{$k}{
+    color:$v;
+  }
+}

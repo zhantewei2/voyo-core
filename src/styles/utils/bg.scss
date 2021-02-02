@@ -1,0 +1,9 @@
+.voyo-bg-gentle{
+  background-color:var(--color-bg3);
+}
+.voyo-bg-linear{
+  @include LinearPrimaryBg();
+}
+.voyo-bg-default{
+  background-color:var(--color-bg);
+}

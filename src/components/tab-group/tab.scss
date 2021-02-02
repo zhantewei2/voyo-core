@@ -1,0 +1,51 @@
+@import "~@voyo/core-style/lib/components-dep";
+
+.voyo-tab-group{
+
+}
+
+.voyo-tab-bar-container{
+  overflow:hidden;
+  white-space: nowrap;
+  display:block;
+}
+
+.voyo-tab-bar-item{
+  @include ICenter();
+  @include Flex-auto();
+  flex-shrink: 1;
+  color:$--voyo-tab-bar-item-color;
+  min-width:$--voyo-tab-bar-item-mini-w;
+  height:$--voyo-tab-bar-item-h;
+  text-align:center;
+  box-sizing: border-box;
+  padding:$--voyo-tab-bar-item-padding;
+  position:relative;
+  background:$--voyo-tab-bar-bg;
+  &.active{
+    color:var(--color-primary);
+  }
+}
+.voyo-tabGroup{
+  &.stiff{
+    @include Full();
+    display:flex;
+    flex-flow: column;
+  }
+}
+.voyo-tabGroup-tabBar{
+  @include AfterBorder();
+  //@include Shadow(tabBar);
+  position:relative;
+}
+.voyo-tabGroup-tabs{
+  &.stiff{
+    @include Flex-auto();
+  }
+}
+.voyo-tabGroup-header{
+
+}
+.voyo-tabGroup-body{
+
+}

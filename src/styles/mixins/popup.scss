@@ -1,0 +1,53 @@
+@mixin PopupViewPositionStyle(){
+  position:absolute;
+  @each $pos in $--voyo-popup-view-type{
+    &.__style-#{$pos}{
+      @if $pos == bottom{
+        bottom:0;
+        left:0;
+        width:100%;
+      }
+      @else if $pos == mid {
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+      }
+      @else if $pos == top {
+        top:0;
+        left:0;
+        width:100%;
+      }
+      @else if $pos == right {
+        right:0;
+        top:0;
+        height:100%;
+      }
+      @else if $pos == left {
+        left:0;
+        top:0;
+        height:100%;
+      }
+    }
+  }
+}
+@mixin PopupViewAppear(){
+  @each $pos in $--voyo-popup-view-type{
+    &.__appear-#{$pos}{
+      @if $pos == left{
+        border-radius:0;
+      }
+      @else if $pos == right{
+        border-radius:0;
+      }
+      @else if $pos == bottom{
+        border-radius:$--voyo-popup-radius $--voyo-popup-radius 0 0;
+      }
+      @else if $pos ==top{
+        border-radius: 0 0 $--voyo-popup-radius $--voyo-popup-radius;
+      }
+      @else if $pos == mid{
+        border-radius: $voyo-popup-radius;
+      }
+    }
+  }
+}

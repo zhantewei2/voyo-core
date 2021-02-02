@@ -1,0 +1,19 @@
+$yiq-contrasted:180;
+$yiq-toocontrasted:200;
+
+@function yiq-is-light($color,$contrasted:$yiq-contrasted){
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+  $yiq: (($red*299)+($green*587)+($blue*114))/1000;
+  @return if($yiq >= $contrasted, true, false);
+}
+
+@function yiq-is-toolight($color){
+  @return yiq-is-light($color,$yiq-toocontrasted);
+}
+
+@function yiq-select($validValue,$light-option,$deep-option){
+  $islight:yiq-is-light($validValue);
+  @return if($islight,$light-option,$deep-option);
+}

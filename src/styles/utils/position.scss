@@ -1,0 +1,18 @@
+.abs-tr{
+  position:absolute;
+  top:$--voyo-space-position;
+  right:$--voyo-space-position;
+}
+
+$voyo-pos-size:(
+    25:50%,
+    50:50%,
+    75:74%,
+    100:100%
+);
+
+@each $k,$v in $voyo-pos-size{
+  .w-#{k}{
+    width:$v;
+  }
+}

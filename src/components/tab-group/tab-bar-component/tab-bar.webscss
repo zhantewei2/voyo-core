@@ -1,0 +1,24 @@
+@import "~@voyo/core-style/lib/components-dep";
+
+.voyo-tab-bar-area{
+  position:relative;
+  display:flex;
+}
+.voyo-tab-bar-thumb{
+  position: absolute;
+  bottom:$--voyo-tab-bar-thumb-bottom;
+  width:$--voyo-tab-bar-thumb-w;
+  height:$--voyo-tab-bar-thumb-h;
+  will-change:transform;
+  opacity:1;
+  .voyo-tab-bar-thumb-change{
+    height:100%;
+    width:100%;
+    background:$--voyo-tab-bar-color;
+    top:0;
+    left:0;
+    will-change:transform;
+    opacity:1;
+    border-radius:5px;
+  }
+}

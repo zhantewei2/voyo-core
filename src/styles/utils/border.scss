@@ -1,0 +1,6 @@
+.voyo-border-after{
+  @include AfterBorder();
+}
+.voyo-border-before{
+  @include BeforeBorder();
+}

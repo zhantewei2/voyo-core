@@ -1,0 +1,10 @@
+//@import "~@voyo/core-style/lib/components-dep";
+//.abs-full{
+//  @include Full();
+//}
+//.overflow-y{
+//  overflow-y:auto;
+//}
+//.overflow-x{
+//  overflow-x:auto;
+//}

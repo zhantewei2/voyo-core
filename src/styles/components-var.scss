@@ -1,0 +1,176 @@
+$--voyo-page-content-z-index:50;
+
+$--voyo-page-header-adapter-padding:0 .5rem;
+$--voyo-page-header-z-index:51;
+$--voyo-layout-opacity:.6;
+
+$--voyo-tabbar-height:3.6rem !default;
+$--voyo-tabbar-background:var(--color-bg2) !default;
+$--voyo-tabbar-icon-size:1.2em;
+$--voyo-tabbar-title-size:small;
+$--voyo-tabbar-z-index:52;
+
+$--voyo-carousel-image-bar-bottom: 3%;
+$--voyo-carousel-image-thumb-w:.7rem;
+$--voyo-carousel-image-thumb-h:.3rem;
+$--voyo-carousel-image-thumb-margin:0 .3rem;
+
+$--voyo-btn-size:$size-map;
+$--voyo-btn-colors:$color-various;
+$--voyo-btn-letter-space: 1px;
+$--voyo-btn-distance:1em;
+$--voyo-btn-icon-dis:0.2em;
+$--voyo-btn-min-width:5.5em;
+$--voyo-btn-block-spacing:1em;
+$--voyo-btn-block-font-size:1.1em;
+$--voyo-btn-loading-percent:1.3;
+$--voyo-btn-round-radius: var(--radius-large);
+$--voyo-btn-block-padding: .9em .8em;
+
+
+$--voyo-toast-bottom:10%;
+$--voyo-toast-min-width:5rem;
+$--voyo-toast-max-width:80%;
+$--voyo-toast-padding:.5em 1em;
+$--voyo-toast-font-size:var(--size-small);
+
+//dialog
+$--voyo-dialog-top:40%;
+$--voyo-dialog-minWidth:320px;
+$--voyo-dialog-maxWidth:600px;
+$--voyo-dialog-width:85%;
+$--voyo-dialog-article-minHeight:60px;
+$--voyo-dialog-article-padding:2rem 1.5rem;
+$--voyo-dialog-article-disable-confirm-padding:2rem 1.5rem 1rem 1.5rem;
+$--voyo-dialog-article-color: var(--color-font-content);
+$--voyo-dialog-article-font: var(--size-font-message);
+$--voyo-dialog-footer-bg:var(--color-bg);
+$--voyo-footer-btn-line-height:3.5;
+$--voyo-footer-btn-color:var(--color-font-title);
+$--voyo-footer-btn-spacing:.5em;
+$--voyo-dialog-header-padding:.7em 1rem;
+$--voyo-dialog-header-color: var(--color-font-brand);
+$--voyo-dialog-confirm-color:var(--color-font);
+$--voyo-dialog-cancel-color:var(--color-font-des);
+
+//toastStrong
+$--voyo-toastStrong-article-width:4rem;
+$--voyo-toastStrong-article-height:4rem;
+$--voyo-toastStrong-padding:.5rem 1rem;
+$--voyo-toastStrong-bg:var(--color-bg4);
+$--voyo-toastStrong-footer-bg:var(--color-bg5);
+$--voyo-toastStrong-footer-padding:.5rem;
+
+
+//input
+$--voyo-input-wrapper-margin:0.2em 0 .2em 0;
+$--voyo-input-wrapper-padding:0 .5em;
+$--voyo-input-size:$size-map;
+$--voyo-input-padding-x:.5em;
+$--voyo-input-padding-y:.5em;
+$--voyo-input-adapt-padding:.2em .5em;
+$--voyo-input-adapt-font-size:1.2em;
+$--voyo-input-adapt-prefix-mini-w:50px;
+$--voyo-input-border-color:var(--color-after-border);
+$--voyo-input-line-color:var(--color-bg-deep3);
+$--voyo-input-placeholder-color:var(--color-font-assist);
+$--voyo-input-placeholder-color2:var(--color-font-title);
+$--voyo-input-clear-padding:.2em .5em;
+$--voyo-input-color-md:var(--color-font-content);
+$--voyo-input-color-candy:var(--color-font-content);
+$--voyo-input-height-md:2.5;
+$--voyo-input-height-flat:2.5;
+$--voyo-input-height-candy:3;
+$--voyo-input-candy-radius:2em;
+$--voyo-input-candy-bg:var(--color-bg3);
+$--voyo-input-colors:(
+  error:var(--color-error)
+);
+$--voyo-input-footer-height:1em;
+$--voyo-input-footer-padding:.2em .2em 0 .2em;
+$--voyo-input-cursor-height:70%;
+$--voyo-input-cursor-width:2px;
+$--voyo-input-cursor-color:var(--color-font-base);
+
+
+//line
+$--voyo-line-bg:var(--color-bg);
+$--voyo-line-padding:1rem 1rem 1rem 0;
+$--voyo-line-content-margin-left:1.5rem;
+$--voyo-line-icon-space:1.5rem;
+
+//tab
+$--voyo-tab-bar-item-mini-w:80px !default;
+$--voyo-tab-bar-item-h:3rem !default;
+$--voyo-tab-bar-item-padding:.5em !default;
+$--voyo-tab-bar-item-font-size:var(--size-small) !default;
+$--voyo-tab-bar-item-color:var(--color-font-content) !default;
+$--voyo-tab-bar-item-active-color: var(--color-font-brand) !default;
+$--voyo-tab-bar-thumb-w:2.5rem !default;
+$--voyo-tab-bar-thumb-h:4px !default;
+$--voyo-tab-bar-thumb-bottom: 0px !default;
+$--voyo-tab-bar-color: var(--color-primary) !default;
+$--voyo-tab-bar-bg:var(--color-bg);
+
+$--voyo-popup-container-padding:1.5rem;
+$--voyo-popup-radius:var(--radius-large);
+$--voyo-popup-view-type: mid top left right bottom;
+$--voyo-popup-close-icon-size:1rem;
+$--voyo-popup-close-icon-space:.5rem;
+$--voyo-popup-container-padding-with-close-icon:2rem 1.5rem 1.5rem 1.5rem;
+$--voyo-popup-activity-close-size:3rem;
+//load
+$--voyo-load-text-color:var(--color-font-des);
+$--voyo-load-text-margin: 0 0 0 .5rem;
+$--voyo-load-text-block-margin:.5rem 0 0 0;
+$--voyo-load-img-length: 3em;
+$--voyo-load-img-block-length: 3em;
+
+//pagination
+$--voyo-pagination-bottom-area-h:50px;
+$--voyo-pagination-message-h:300px;
+$--voyo-pagination-message-title-padding:2rem 0 1rem 0;
+
+//figure
+$--voyo-figure-padding:2.2rem 1rem 2rem 1rem;
+$--voyo-figure-image-width:8em;
+$--voyo-figure-image-height:8em;
+
+$--voyo-figure-title-padding:1rem;
+$--voyo-figure-content-padding:1rem;
+
+//sidebar
+$--voyo-sidebar-size:var(--size-font);
+$--voyo-sidebar-width:6em;
+$--voyo-sidebar-thumb-height:1em;
+$--voyo-sidebar-thumb-width:.3em;
+$--voyo-sidebar-thumb-color:var(--color-primary);
+
+$--voyo-sidebar-item-bg:var(--color-bg2);
+$--voyo-sidebar-item-action-bg:var(--color-bg);
+$--voyo-sidebar-item-height:4em;
+
+//image icon
+$--voyo-image-icon-size:$size-map;
+//footer bar
+$--voyo-footer-bar-height:3.6rem;
+$--voyo-footer-bar-bg:var(--color-bg);
+$--voyo-footer-bar-padding:0 1rem;
+
+//article
+$--voyo-article-padding:1rem .8rem;
+$--voyo-article-header-padding:1rem;
+$--voyo-article-bg:var(--color-bg);
+
+//keyboard
+$--voyo-keyboard-key-h:6.5vh;
+$--voyo-keyboard-key-h-alone:6.8vh;
+$--voyo-keyboard-key-size:var(--size-strong);
+$--voyo-keyboard-bg:var(--color-bg3);
+$--voyo-keyboard-key-bg:var(--color-bg);
+$--voyo-keyboard-content-padding:1rem .6rem .5rem .6rem;
+$--voyo-keyboard-item-margin:.2rem;
+$--voyo-keyboard-double-left:76%;
+$--voyo-keyboard-double-right:24%;
+$--voyo-keyboard-key-active-bg:var(--color-bg-deep3);
+$--voyo-keyboard-closebar-padding:.2rem 0 .3rem 0;

@@ -1,0 +1,78 @@
+%voyo-line{
+  ._label{
+    max-width:30%;
+  }
+  ._valueBlock{
+    max-width:60%;
+    text-align:right;
+  }
+  @each $k,$v in $size-map{
+    &.__#{$k}{
+      font-size:$v;
+    }
+  }
+  ._content,._message,._des{
+    @include Ellipsis();
+    display:inline-block;
+  }
+}
+.voyo-title-line{
+  @extend %voyo-line;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:$voyo-title-line-padding;
+
+  &.__inner{
+    padding:$voyo-title-line-padding-inner;
+  }
+  ._content{
+    @extend .voyo-text-title;
+  }
+  ._message{
+    @include text-title();
+  }
+  ._des{
+    @extend .voyo-text-des;
+    @include IconVertical();
+    @include IconRight();
+  }
+  ._image{
+    display:inline-block;
+    width:$voyo-title-line-image-w;
+    height:$voyo-title-line-image-h;
+    margin-right:1em;
+    vertical-align: middle;
+  }
+}
+.voyo-des-line{
+  @extend %voyo-line;
+  @include text-des(mini);
+  padding:$voyo-des-line-padding;
+}
+.voyo-content-line{
+  @extend %voyo-line;
+  @include text-content(small);
+  padding: $voyo-content-line-padding;
+}
+.voyo-empty-line{
+  @extend %voyo-line;
+  padding:$voyo-empty-line-padding;
+}
+
+
+.voyo-li{
+  position:relative;
+  padding:$voyo-li-padding;
+  color:var(--color-font-content);
+  @each $k,$v in $size-map{
+    &.__size-#{$k}{
+      font-size:$v;
+    }
+  }
+  .__border{
+    &:not(:last-of-type){
+      @include AfterBorder();
+    }
+  }
+}

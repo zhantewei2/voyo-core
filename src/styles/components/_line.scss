@@ -1,0 +1,34 @@
+%voyo-base-line{
+
+}
+.voyo-line{
+  position:relative;
+}
+.voyo-line-content{
+  padding:$--voyo-line-padding;
+  position:relative;
+  @include BeforeBorder();
+  margin-left:$--voyo-line-content-margin-left;
+  ._leftIcon,._left{
+    float:left;
+  }
+  ._right,._rightIcon{
+    float:right;
+  }
+  ._left,._right{
+    @include text-content();
+  }
+  ._leftIcon{
+    padding-right:$--voyo-line-icon-space;
+  }
+  ._leftIcon,._rightIcon{
+    @include text-brand(medium);
+  }
+
+  &::after{
+    content:"";
+    display:block;
+    clear:both;
+  }
+}
+

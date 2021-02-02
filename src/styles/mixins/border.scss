@@ -1,0 +1,39 @@
+@mixin _baseBorder($borderPos:bottom,$borderColor:var(--color-after-border)){
+  content:"";
+  position:absolute;
+  @if $borderPos == "bottom"{
+    height:1px;
+    bottom:0;
+    width:100%;
+    left:0;
+    transform:scaleY(.4);
+  }
+  @else if $borderPos == "right"{
+    height:100%;
+    width:1px;
+    top:0;
+    right:0;
+    transform: scaleX(.4);
+  }
+  @else if $borderPos == "top"{
+    height:1px;
+    width:100%;
+    left:0;
+    top:0;
+    transform: scaleY(.4);
+  }
+  background: $borderColor;
+}
+
+@mixin AfterBorder($borderPos:bottom,$borderColor: var(--color-after-border)){
+  &::after{
+    @include _baseBorder($borderPos,$borderColor);
+  }
+}
+
+@mixin BeforeBorder($borderPos:bottom,$borderColor:var(--color-after-border)){
+  &::before{
+    @include _baseBorder($borderPos,$borderColor);
+  }
+}
+

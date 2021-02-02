@@ -1,0 +1,30 @@
+@keyframes Ripple-Bubbling{
+  0%{transform:scale3d(.5,.5,.5);opacity:.1}
+  30%{transform: scale3d(4,4,4);opacity:.15}
+  55%{transform:scale3d(8,8,8);opacity:.2}
+  100%{transform: scale3d(10,10,10);opacity:0}
+}
+.ripple-bubbling{
+  display:block;
+  position:absolute;
+  border-radius:50%;
+  width:1em;
+  height:1em;
+  animation:Ripple-Bubbling .4s linear;
+  animation-fill-mode:forwards;
+}
+.ripple-wrapper{
+  overflow:hidden;
+  z-index:1;
+  cursor:pointer;
+  user-select: none;
+  @include Full();
+  background-color:transparent;
+  transition:background .5s ease;
+}
+.ripple-wrapper-light{
+  @include Ripple(null,light);
+}
+.ripple-wrapper-deep{
+  @include Ripple(null,deep);
+}

@@ -1,0 +1,46 @@
+@import "~@voyo/core-style/lib/components-dep";
+
+.voyo-refresh-container{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  will-change:transform;
+  transform: scale(0,0);
+  transform-origin:50% 0;
+  @include Center();
+}
+%voyo-refresh-block{
+  display:none;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.voyo-refresh-running{
+  @extend %voyo-refresh-block;
+}
+.voyo-refresh-will{
+  @extend %voyo-refresh-block;
+}
+.voyo-refresh-down{
+  @extend %voyo-refresh-block;
+  display:flex;
+}
+.voyo-refresh-container{
+  &.__running{
+    .voyo-refresh-running{
+      display:flex;
+    }
+    .voyo-refresh-down{
+      display:none;
+    }
+  }
+  &.__will{
+    .voyo-refresh-will{
+      display:flex;
+    }
+    .voyo-refresh-down{
+      display:none;
+    }
+  }
+}

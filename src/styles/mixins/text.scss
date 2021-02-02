@@ -1,0 +1,24 @@
+@import "../utils/yiq";
+@mixin text-des($size:now,$white:false){
+  font-size:map-get($size-map,$size) !important;
+  color:if($white,var(--color-font-des-reverse),var(--color-font-des));
+}
+
+@mixin text-title($size:now,$white:false){
+  font-size:map-get($size-map,$size) !important;
+  color:if($white,var(--color-font-title-reverse),var(--color-font-title));
+}
+
+@mixin text-content($size:now){
+  font-size:map-get($size-map,$size) !important;
+  color:var(--color-font-content);
+}
+@mixin text-brand($size:now,$white:false){
+  font-size:map-get($size-map,$size) !important;
+  color:if($white,var(--color-font-brand-reverse),var(--color-font-brand));
+}
+
+@mixin text-assist($size:now) {
+  font-size:map-get($size-map,$size) !important;
+  color:var(--color-font-assist);
+}

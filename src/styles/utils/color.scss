@@ -1,0 +1,9 @@
+@each $k,$v in $color-various{
+  .voyo-color-#{$k}{
+    color:$v;
+  }
+}
+
+.voyo-color-des{
+  color:var(--color-font-des);
+}

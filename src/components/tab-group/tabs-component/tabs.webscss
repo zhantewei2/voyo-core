@@ -1,0 +1,18 @@
+@import "~@voyo/core-style/lib/components-dep";
+.carousel-page{
+  @include Full();
+  contain:strict;
+  will-change: transform;
+  opacity:1;
+  overflow-y:auto;
+}
+.no-display{
+  display:none !important;
+}
+.carousel-container{
+  display:block;
+  overflow:hidden;
+  width:100%;
+  position:absolute;
+  @include Full();
+}

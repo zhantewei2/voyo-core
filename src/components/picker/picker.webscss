@@ -1,0 +1,44 @@
+@import "~@voyo/core-style/lib/components-dep";
+$--voyo-picker-item-h:3rem;
+$--voyo-picker-item-w:100%;
+div{
+  box-sizing: border-box;
+}
+.voyo-picker-item{
+  text-align: center;
+  height:$--voyo-picker-item-h;
+  line-height: $--voyo-picker-item-h;
+}
+.voyo-picker-list-wrapper{
+  height:$--voyo-picker-item-h*5;
+  overflow:hidden;
+  width:$--voyo-picker-item-w;
+  position:relative;
+  contain: strict;
+  user-select: none;
+}
+.voyo-picker-list-view{
+  will-change: transform;
+}
+%voyo-picker-list-cover{
+  background:var(--color-bg5);
+  width:100%;
+  height:$--voyo-picker-item-h*2;
+  position:absolute;
+}
+.voyo-picker-list-cover-top{
+  @extend %voyo-picker-list-cover;
+  top:0;
+  left:0;
+  z-index:1;
+  background-image:linear-gradient(to top,var(--color-bg5),var(--color-bg4));
+  @include AfterBorder(bottom);
+}
+.voyo-picker-list-cover-bottom{
+  @extend %voyo-picker-list-cover;
+  bottom:0;
+  left:0;
+  z-index:1;
+  background-image:linear-gradient(to bottom,var(--color-bg5),var(--color-bg4));
+  @include AfterBorder(top);
+}

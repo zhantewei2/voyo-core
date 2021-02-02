@@ -1,0 +1,51 @@
+.voyo-load-wrapper{
+  display:inline-block;
+  &.__block{
+    @include Center();
+    height:5.5em;
+    ._img{
+      height:$--voyo-load-img-block-length;
+      width:$--voyo-load-img-block-length;
+    }
+    ._view{
+      @include CenterColumn();
+    }
+    ._text{
+      margin:$--voyo-load-text-block-margin;
+    }
+  }
+  &.__inline{
+    ._view{
+      @include ICenter();
+    }
+    ._img{
+      height:$--voyo-load-img-length;
+      width:$--voyo-load-img-length;
+    }
+    ._text{
+      margin:$--voyo-load-text-margin;
+    }
+  }
+  &.__abs,&.__absCenter{
+    position:absolute;
+    z-index:map-get($voyo-index,loadBlock);
+  }
+  &.__abs{
+    width:100%;
+    left:0;
+    top:0;
+  }
+  &.__absCenter{
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+  ._text{
+    color:$--voyo-load-text-color;
+  }
+  @each $k,$v in $size-map{
+    &.__size-#{$k}{
+      font-size:$v;
+    }
+  }
+}

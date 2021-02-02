@@ -1,0 +1,42 @@
+@import "~@voyo/core-style/lib/components-dep";
+@import "~@voyo/core-style/lib/components/load";
+
+@keyframes VoyoAnLoading {
+  from {}
+  to {transform: rotate(360deg)}
+}
+.voyo-an-loading{
+  animation: VoyoAnLoading 1s linear infinite;
+}
+
+@keyframes VoyoFadeIn {
+  from {opacity:0;transform: scale3d(.8,.8,.8)}
+  to {}
+}
+@keyframes VoyoFadeOut {
+  from {}
+  to {opacity:0;transform: scale3d(.8,.8,.8)}
+}
+@keyframes VoyoFadeIn0 {
+  from {opacity:0}
+  to{}
+}
+@keyframes VoyoFadeOut0 {
+  from {}
+  to{opacity:0}
+}
+
+.voyo-an-fadeIn{
+  animation: VoyoFadeIn .2s $voyo-in-timer;
+}
+.voyo-an-fadeOut{
+  animation: VoyoFadeOut .2s $voyo-out-timer;
+  animation-fill-mode: forwards;
+}
+.voyo-an-fadeIn0{
+  @include Animation(VoyoFadeIn0,"comfort-in");
+}
+.voyo-an-fadeOut0{
+  @include Animation(VoyoFadeOut0,"comfort-out");
+}
+

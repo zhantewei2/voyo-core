@@ -1,0 +1,17 @@
+.voyo-toast{
+  @include Toast(var(--color-bg-deep),var(--color-font-white));
+  will-change: transform;
+  transform: translate3d(-50%,0,0);
+  opacity:.85;
+}
+.voyo-toast-enter{
+  transform: translate3d(-50%,100%,0) scale(.8,.8);
+  opacity:0;
+}
+.voyo-toast-enter-active,.voyo-toast-leave-active{
+  @include Transition($timer:.2s ease-out);
+}
+.voyo-toast-leave-to{
+  transform: translate3d(-50%,50%,0);
+  opacity:0;
+}

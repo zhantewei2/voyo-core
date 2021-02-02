@@ -1,0 +1,117 @@
+$font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+$line-height:1.5;
+$line-height-content:1.8;
+$use-radius:true;
+$use-shadow:false;
+$use-linear:true;
+$use-btn-linear:true;
+$use-block-shadow:true;
+
+$size-map:(
+  mini:var(--size-mini),
+  small:var(--size-small),
+  now:var(--size-now),
+  medium:var(--size-medium),
+  strong:var(--size-strong),
+  large:var(--size-large)
+);
+$color-various:(
+  primary:var(--color-primary),
+  secondary:var(--color-secondary),
+  success:var(--color-success),
+  warn:var(--color-warn),
+  error:var(--color-error)
+);
+
+$color-border-various:(
+  primary:var(--color-primary),
+  secondary:var(--color-secondary),
+  success:var(--color-success),
+  warn:var(--color-warn),
+  error:var(--color-error)
+);
+
+$color-font-various:(
+  primary:var(--color-primary-font),
+  secondary:var(--color-secondary-font),
+  success:var(--color-success-font),
+  warn:var(--color-warn-font),
+  error:var(--color-error-font)
+);
+
+$color-light-various:(
+  primary:var(--color-primary-light),
+  secondary:var(--color-secondary-light),
+  success:var(--color-success-light),
+  warn:var(--color-warn-light),
+  error:var(--color-error-light)
+);
+
+$color-gentle-various:(
+  primary:var(--color-primary-gentle),
+  secondary:var(--color-secondary-gentle),
+  success:var(--color-success-gentle),
+  warn:var(--color-warn-gentle),
+  error:var(--color-error-gentle)
+);
+$font-colors:(
+  des:var(--color-font-des),
+  content:var(--color-font-content),
+  title:var(--color-font-title),
+  brand:var(--color-font-brand),
+  assist:var(--color-font-assist)
+);
+
+$voyo-index:(
+  toast:1000,
+  dialog:900,
+  toastStrong:950,
+  popupSlide:599,
+  loadBlock:2,
+  header:1001,
+  footerBar:500,
+  keyboard:600,
+  cover:501
+);
+$--voyo-space-position:8px;
+$--voyo-space-base:5px;
+//text
+$--voyo-text-block-line-height:1.8 !default;
+
+$--voyo-icon-size-input:1.3em !default;
+$--voyo-icon-size-line: var(--size-now) !default;
+$--voyo-icon-size-mini: var(--size-small) !default;
+$voyo-icon-size:(
+  mini: $--voyo-icon-size-mini,
+  input: $--voyo-icon-size-input,
+  line: $--voyo-icon-size-line
+) !default;
+
+//line
+$voyo-title-line-padding:.5rem 1rem;
+$voyo-title-line-padding-inner: .3rem .4rem;
+$voyo-title-line-image-w:2em;
+$voyo-title-line-image-h:2em;
+$voyo-des-line-padding:.2rem 1rem;
+$voyo-content-line-padding:.3rem 1rem;
+$voyo-empty-line-padding:.5rem 1rem;
+$voyo-li-padding:.9em;
+
+//icon
+$--voyo-icon-space:var(--space-base);
+//animation
+$voyo-in-timer:cubic-bezier(.09,.34,.48,.97);
+$voyo-out-timer:cubic-bezier(.79,.07,.98,1);
+
+$voyo-area-content-padding:1.5rem 1rem;
+$voyo-area-footer-padding:1rem;
+
+//avatar
+$voyo-avatar-h:5em;
+$voyo-avatar-w:5em;
+$voyo-avatar-title:1.5em;
+$voyo-avatar-des:1em;
+$voyo-avatar-title-p:0 0 .5rem 0;
+$voyo-avatar-title-max-w:10em;
+//effect
+$voyo-bg-blur:5px;

@@ -1,0 +1,29 @@
+@import "~@voyo/core-style/lib/components-dep";
+@import "~@voyo/core-style/lib/components/figure";
+
+.voyo-pagination{
+
+  z-index:1;
+  &.__scroll{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    overflow-x:hidden;
+  }
+}
+.voyo-svg-container{
+  svg{
+    width:50px;
+  }
+}
+.voyo-pagination-bottom-area{
+  width:100%;
+  display:none;
+  height: $--voyo-pagination-bottom-area-h;
+  @include Center();
+}
+.voyo-pagination-text-des{
+   @include text-des(mini);
+}

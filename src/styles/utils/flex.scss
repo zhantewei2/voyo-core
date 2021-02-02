@@ -1,0 +1,47 @@
+.flex{
+  display:flex;
+}
+.flex-center{
+  @include Center();
+}
+.flex-auto{
+  @include Flex-auto();
+}
+.flex-1{
+  flex:1;
+  position:relative;
+}
+.flex-center-column{
+  @extend .flex-center;
+  flex-flow:column;
+}
+.flex-column{
+  display:flex;
+  flex-flow: column;
+}
+.iflex-center{
+  @include ICenter();
+}
+.flex-v-mid{
+  display:flex !important;
+  align-items: center;
+}
+.flex-h-mid{
+  display:flex;
+  justify-content: center;
+}
+.flex-between{
+  display:flex;
+  justify-content: space-between;
+}
+.flex-around{
+  display:flex;
+  justify-content: space-around;
+}
+.iflex-between{
+  display:inline-flex;
+  justify-content: space-between;
+}
+.__h-center{
+  justify-content: center !important;
+}

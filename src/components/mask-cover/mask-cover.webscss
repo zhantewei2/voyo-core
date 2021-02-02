@@ -1,0 +1,34 @@
+@import "~@voyo/core-style/lib/components-dep";
+.voyo-mask-cover{
+  bottom:0;
+  left:0;
+  width:100%;
+  position:fixed;
+  display:none;
+  z-index:map-get($voyo-index,cover);
+  ._layout-bg{
+    background:var(--color-bg-deep);
+    opacity:$--voyo-layout-opacity;
+    @include Full();
+    @include Transition();
+  }
+}
+.voyo-animation-fade-enter{
+  opacity:0;
+  transform:translate3d(0,10%,0);
+
+}
+.voyo-animation-fade-enter-active{
+  transition:all .3s ease;
+}
+.voyo-animation-fade-enter-to{
+  opacity:1;
+}
+.voyo-animation-fade-leave-active{
+  opacity:0;
+  transform: translate3d(0,10%,0);
+  transition:all .3s ease;
+}
+.voyo-mask-cover-content{
+  position:relative;
+}
