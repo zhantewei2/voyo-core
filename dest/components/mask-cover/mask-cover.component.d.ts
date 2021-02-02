@@ -1,0 +1,35 @@
+import { VoyoComponent, VoyoEventEmitter } from "../commonComponent";
+import { AnimationDisplay } from "../../utils";
+export declare class MaskCoverComponent extends VoyoComponent {
+    relativeElement: HTMLElement;
+    relative: "next" | "previous";
+    set show1(v: number);
+    autoClose: boolean;
+    displayRoot: boolean;
+    showChange: VoyoEventEmitter<any>;
+    show0: boolean;
+    preventClickName: string;
+    scrollParent: HTMLElement;
+    maskEl: HTMLElement;
+    contentEl: HTMLElement;
+    animation: AnimationDisplay;
+    relEl: HTMLElement | any;
+    readyRemoveRootListener: boolean;
+    rootEl: HTMLElement;
+    restoreListener: boolean;
+    created(): void;
+    afterCreate(): void;
+    mounted(): void;
+    disconnectedCallback(): void;
+    connectedCallback(): void;
+    getRelEl(): void;
+    defineAutoClose(): void;
+    cleanCloseListener(): void;
+    autoCloseListener: (e: any) => void;
+    displayInRoot(): void;
+    hiddenInRoot(): void;
+    trigger(): void;
+    toShow(): void;
+    setMaskPosition(): void;
+    toHide(): void;
+}

@@ -1,0 +1,34 @@
+import { VoyoComponent } from "../commonComponent";
+import { ClassManage } from "../../utils";
+import { Subject } from "rxjs";
+import { MoveChangeParams, MoveChangeType } from "./carousel.interface";
+export declare type PositionState = "left" | "mid" | "right";
+export declare class CarouselItemComponent extends VoyoComponent {
+    index: number;
+    order: string;
+    orderIndex: number;
+    width: number;
+    classM: ClassManage;
+    isVisible: boolean;
+    animateRun: boolean;
+    containerWidth: number;
+    transformMove(disX: any): void;
+    animateMoveChange: Subject<MoveChangeParams>;
+    listenAnimate(startPos: number, targetPos: number, indexPos: number, moveType: MoveChangeType, progress: number): void;
+    created(): void;
+    connectedCallback(): void;
+    visible(): void;
+    hid(): void;
+    set positionState(v: PositionState);
+    get positionState(): PositionState;
+    positionStateCurrent: PositionState;
+    positionStatePre: PositionState;
+    moveDis: number;
+    atLeft(): void;
+    atRight(): void;
+    atMid(): void;
+    atPosition(pos: PositionState): void;
+    switchTransform(pos: PositionState): number;
+    animateTo(transitionDuration: number, pos: "mid" | "left" | "right", animateEnd?: () => void, specifyIndex?: boolean): void;
+    clearTransformStyleAn(duration: number, animateEnd: () => void): void;
+}

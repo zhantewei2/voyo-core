@@ -1,0 +1,36 @@
+import { KeyboardComponent } from "../keyboard/keyboard.component";
+import { Subject, Subscription } from "rxjs";
+import { InputInterface, visualInputType } from "./input";
+import { ExcuteAfterConnected } from "../utils";
+export declare class VisualInput implements InputInterface {
+    el: HTMLElement;
+    cursor: HTMLElement;
+    textEl: HTMLElement;
+    keyboard: KeyboardComponent;
+    passwordWord: string;
+    type: visualInputType;
+    isFocus: boolean;
+    watchFocus(): void;
+    value: any;
+    excuteAfterKeyboard: ExcuteAfterConnected;
+    constructor();
+    _disabled: boolean;
+    set disabled(v: boolean);
+    insertInBody: boolean;
+    showValue(v: string): void;
+    writeValue(v: string): void;
+    setValue(v: string): void;
+    bodyClickSub: Subscription | null;
+    clearBodySub(): void;
+    focus(): void;
+    blur(): void;
+    destroy(): void;
+    toFocus(): void;
+    toBlur(): void;
+    setType(type: visualInputType): void;
+    getInputEl(): HTMLElement;
+    onInput: Subject<any>;
+    onFocus: Subject<any>;
+    onBlur: Subject<any>;
+    onKeypress: Subject<number>;
+}
