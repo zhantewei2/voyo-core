@@ -1,8 +1,7 @@
 import { VoyoComponent, VoyoEventEmitter } from "../commonComponent";
 import { VoyoDor, VoyoInput } from "../BaseComponent";
-import "./page-header.scss";
-import { IOCAutowired } from "@voyo/core/ioc";
-import { RouterChangeService } from "@voyo/core/router";
+import { IOCAutowired } from "../../ioc";
+import { RouterChangeService } from "../../router";
 import { ROUTER_CHANGE_IOC_NAME } from "../../setting";
 import backSvg from "./back.svg";
 import {
@@ -11,6 +10,7 @@ import {
   Animation,
   AnimationDisplay,
 } from "../../utils";
+import {Subscription} from "rxjs";
 
 const headerHeight = 50;
 
@@ -65,6 +65,7 @@ export class PageHeaderComponent extends VoyoComponent {
   headerContentTitleAn: AnimationDisplay;
   headerContentTitleOpenAn: AnimationDisplay;
   autoTransitionBlockExists: boolean;
+  routerChangeOrder:Subscription;
   switchAutoTransitionType(type: AutoTransitionOptions) {
     if (!type) return;
     if (type === true || type === "true" || type === 1) {
@@ -101,7 +102,7 @@ export class PageHeaderComponent extends VoyoComponent {
       "voyo-animation-fade",
       "flex",
     );
-    this.routerChange.immediateWatch.subscribe(() => {
+    this.routerChangeOrder=this.routerChange.immediateWatch.subscribe(() => {
       this.showBackBtn(this.routerChange.hasHistory());
     });
     this.headerBackEl.addEventListener("click", () => {
@@ -143,6 +144,9 @@ export class PageHeaderComponent extends VoyoComponent {
   autoTransitionHiddenSlot() {
     this.headerContentTitleOpenAn.close();
     this.headerContentTitleAn.open();
+  }
+  disconnectedCallback(){
+    this.routerChangeOrder.unsubscribe();
   }
   mounted() {
     this.classList.add("voyo-page-header");

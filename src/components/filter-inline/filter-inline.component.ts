@@ -1,7 +1,7 @@
 import { VoyoComponent, VoyoEventEmitter } from "../commonComponent";
 import { VoyoDor, VoyoInput } from "../BaseComponent";
 import { ClassManage } from "../../utils";
-import { VoyoOutput } from "@voyo/core/components";
+import { VoyoOutput } from "../../components";
 import { ButtonComponent } from "../button/button.component";
 import { SelectMoveEl } from "../movable-area/select-move-el";
 import { sameArray } from "../../utils/array";

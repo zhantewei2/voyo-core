@@ -1,4 +1,4 @@
-import { MovableArea } from "@voyo/core/components";
+import { MovableArea } from "../../../components";
 import { merge } from "rxjs";
 import { distinctUntilChanged, map } from "rxjs/operators";
 

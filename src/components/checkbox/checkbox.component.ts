@@ -1,7 +1,7 @@
 import { VoyoComponent, VoyoEventEmitter } from "../commonComponent";
 import { VoyoDor, VoyoInput } from "../BaseComponent";
-import { VoyoOutput } from "@voyo/core/components";
-import { BtnTypeVarious } from "@voyo/core/types/base-types";
+import { VoyoOutput } from "../../components";
+import { BtnTypeVarious } from "../../types/base-types";
 
 @VoyoDor({
   name: "voyo-checkbox",

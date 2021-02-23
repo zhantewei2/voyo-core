@@ -1,8 +1,7 @@
 import { __decorate } from "tslib";
 import { VoyoComponent, VoyoEventEmitter } from "../commonComponent";
 import { VoyoDor, VoyoInput } from "../BaseComponent";
-import "./checkradio.webscss";
-import { VoyoOutput } from "@voyo/core/components";
+import { VoyoOutput } from "../../components";
 let CheckradioComponent = class CheckradioComponent extends VoyoComponent {
     constructor() {
         super(...arguments);

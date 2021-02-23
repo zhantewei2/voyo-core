@@ -1,4 +1,4 @@
-import { AnimationDisplay } from "@voyo/core/utils";
+import { AnimationDisplay } from "../../utils";
 
 export class ToastStrong {
   open() {}

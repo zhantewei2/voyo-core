@@ -1,4 +1,4 @@
-import { KeepScrollContainer } from "@voyo/core/utils/scroll";
+import { KeepScrollContainer } from "../../utils/scroll";
 import { VoyoComponent, VoyoEventEmitter } from "../commonComponent";
 import { ClassManage } from "../../utils";
 import { ExcuteAfterConnected } from "../utils/excuteAfterConnected";

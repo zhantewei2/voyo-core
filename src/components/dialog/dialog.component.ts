@@ -3,7 +3,7 @@ import { VoyoDor, VoyoInput } from "../BaseComponent";
 import { ClassManage } from "../../utils";
 import { handleRipple } from "../../utils/ripple";
 import { AnimationDisplay } from "../../utils/animation/AnimationSimple";
-import { VoyoOutput } from "@voyo/core/components";
+import { VoyoOutput } from "../../components";
 
 export interface DialogOpenOpts {
   header?: string;

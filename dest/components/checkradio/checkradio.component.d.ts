@@ -1,6 +1,5 @@
 import { VoyoComponent, VoyoEventEmitter } from "../commonComponent";
-import "./checkradio.webscss";
-import { BtnTypeVarious } from "@voyo/core/types/base-types";
+import { BtnTypeVarious } from "../../types/base-types";
 export declare class CheckradioComponent extends VoyoComponent {
     voyoTap: VoyoEventEmitter<any>;
     set value(v: BtnTypeVarious);

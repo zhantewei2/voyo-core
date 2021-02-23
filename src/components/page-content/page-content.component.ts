@@ -1,7 +1,6 @@
 import { VoyoComponent } from "../commonComponent";
 import { KeepScrollContainer } from "../../utils/scroll";
 import { VoyoDor, VoyoInput } from "../BaseComponent";
-import "./page-content.scss";
 import { findParentByComponentName } from "../../utils";
 import { of, fromEvent, Observable, merge } from "rxjs";
 import { map } from "rxjs/operators";

@@ -1,7 +1,7 @@
 import { __decorate } from "tslib";
 import { VoyoComponent, VoyoEventEmitter } from "../commonComponent";
 import { VoyoDor, VoyoInput } from "../BaseComponent";
-import { VoyoOutput } from "@voyo/core/components";
+import { VoyoOutput } from "../../components";
 let CheckboxComponent = class CheckboxComponent extends VoyoComponent {
     constructor() {
         super(...arguments);

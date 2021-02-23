@@ -1,4 +1,4 @@
-import { MovableArea } from "@voyo/core/components";
+import { MovableArea } from "../../../components";
 export interface TabItemRectRef {
     left: number;
     right: number;

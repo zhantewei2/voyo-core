@@ -1,7 +1,7 @@
 import { __decorate } from "tslib";
 import { VoyoComponent, VoyoEventEmitter } from "../commonComponent";
 import { VoyoDor, VoyoInput } from "../BaseComponent";
-import { VoyoOutput } from "@voyo/core/components";
+import { VoyoOutput } from "../../components";
 import { SelectMoveEl } from "../movable-area/select-move-el";
 import { sameArray } from "../../utils/array";
 let FilterInlineComponent = class FilterInlineComponent extends VoyoComponent {

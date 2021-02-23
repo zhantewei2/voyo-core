@@ -1,7 +1,7 @@
 import { VoyoComponent } from "../commonComponent";
-import "./page-header.scss";
-import { RouterChangeService } from "@voyo/core/router";
+import { RouterChangeService } from "../../router";
 import { ClassManage, AnimationDisplay } from "../../utils";
+import { Subscription } from "rxjs";
 declare type AutoTransitionType = "whiteToDark";
 declare type AutoTransitionOptions = "whiteToDark" | boolean | "true" | 1;
 export declare class PageHeaderComponent extends VoyoComponent {
@@ -23,6 +23,7 @@ export declare class PageHeaderComponent extends VoyoComponent {
     headerContentTitleAn: AnimationDisplay;
     headerContentTitleOpenAn: AnimationDisplay;
     autoTransitionBlockExists: boolean;
+    routerChangeOrder: Subscription;
     switchAutoTransitionType(type: AutoTransitionOptions): void;
     created(): void;
     backBtnIsShow: boolean;
@@ -33,6 +34,7 @@ export declare class PageHeaderComponent extends VoyoComponent {
     autoTransitionStrict(): void;
     autoTransitionOpenSlot(): void;
     autoTransitionHiddenSlot(): void;
+    disconnectedCallback(): void;
     mounted(): void;
     checkAutoTransition(): void;
 }
