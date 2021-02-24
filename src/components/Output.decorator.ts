@@ -12,7 +12,7 @@ export const VoyoOutput = function({
       const emitter: VoyoEventEmitter<any> = currentTarget[key];
       emitter.subscribe((eventValue: any) => {
         currentTarget.dispatchEvent(
-          new CustomEvent(eventName, { detail: eventValue }),
+          new CustomEvent(eventName.toLowerCase(), { detail: eventValue }),
         );
       });
     });

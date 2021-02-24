@@ -3,7 +3,7 @@ export const VoyoOutput = function ({ event: eventName, }) {
         (target.handlers || (target.handlers = [])).push((currentTarget) => {
             const emitter = currentTarget[key];
             emitter.subscribe((eventValue) => {
-                currentTarget.dispatchEvent(new CustomEvent(eventName, { detail: eventValue }));
+                currentTarget.dispatchEvent(new CustomEvent(eventName.toLowerCase(), { detail: eventValue }));
             });
         });
     };

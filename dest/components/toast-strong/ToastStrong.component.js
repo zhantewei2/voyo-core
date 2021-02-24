@@ -1,9 +1,9 @@
 import { __decorate } from "tslib";
 import { VoyoComponent } from "../commonComponent";
 import { VoyoDor } from "../BaseComponent";
-import { CaRMfIRe as completeSvg } from "../../svg.js";
-import { KsRMfIR as loadColousSvg2 } from "../../svg.js";
-import { XsRMfIR as loseSvg } from "../../svg.js";
+import { zCiPgIR as completeSvg } from "../../svg.js";
+import { dViPgIR as loadColousSvg2 } from "../../svg.js";
+import { fViPgIR as loseSvg } from "../../svg.js";
 import { IOCAutowired } from "../../ioc";
 import { SETTING_IOC_NAME } from "../../setting";
 import { AnimationDisplay } from "../../utils";
