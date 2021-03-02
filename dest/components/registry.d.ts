@@ -16,3 +16,4 @@ export * from "./registry/page";
 export * from "./registry/picker";
 export * from "./registry/scroll-view";
 export * from "./registry/filter-inline";
+export * from "./registry/menu";

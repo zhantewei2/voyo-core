@@ -10,3 +10,5 @@ export * from "./bezier";
 export * from "./scroll";
 export * from "./textToHtml";
 export * from "./array"
+export * from "./navData/data.interface";
+export * from "./navData/NavDataHandler";

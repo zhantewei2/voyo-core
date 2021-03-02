@@ -26,4 +26,5 @@ export class CoreSetting {
   toastStrongTypeDefault: any = "load";
   pgSetting: PaginationSetting<any>;
   loadImg = "";
+  pageDataLoadImg="";
 }

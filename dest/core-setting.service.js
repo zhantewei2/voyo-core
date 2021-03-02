@@ -7,6 +7,7 @@ let CoreSetting = class CoreSetting {
         this.toastStrongDurationTime = 1500;
         this.toastStrongTypeDefault = "load";
         this.loadImg = "";
+        this.pageDataLoadImg = "";
     }
 };
 CoreSetting = __decorate([

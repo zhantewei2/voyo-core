@@ -129,7 +129,7 @@ FilterInlineComponent = __decorate([
     </nav>
   </main>
   `,
-        styles: '.container{-webkit-user-select:none;user-select:none;height:2.5rem}.container,.wrapper{display:flex;overflow:hidden}.wrapper{flex-grow:1;flex-shrink:1;flex-basis:0;text-align:right;align-items:center;flex-wrap:nowrap;padding:.5rem 0}.view,.wrapper{white-space:nowrap}.view{display:inline-block;min-width:100%}.suffix{padding-left:.5rem;padding-right:.5rem;position:relative;display:inline-flex;align-items:center;text-align:center;box-shadow:-6px 0 12px -3px var(--shadow-color)}',
+        styles: '@-webkit-keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@-webkit-keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}@keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}.container{-webkit-user-select:none;user-select:none;height:2.5rem}.container,.wrapper{display:flex;overflow:hidden}.wrapper{flex-grow:1;flex-shrink:1;flex-basis:0;text-align:right;align-items:center;flex-wrap:nowrap;padding:.5rem 0}.view,.wrapper{white-space:nowrap}.view{display:inline-block;min-width:100%}.suffix{padding-left:.5rem;padding-right:.5rem;position:relative;display:inline-flex;align-items:center;text-align:center;box-shadow:-6px 0 12px -3px var(--shadow-color)}',
     })
 ], FilterInlineComponent);
 export { FilterInlineComponent };

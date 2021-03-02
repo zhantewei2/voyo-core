@@ -77,6 +77,7 @@ export class AnimationIf extends AnimationSimple {
       },
       bindTransitionEl,
     );
+
     this.parentEl = parentEl;
   }
   open() {
