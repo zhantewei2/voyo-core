@@ -1,6 +1,6 @@
 {
   "name": "@voyo/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dest/index.js",
   "scripts": {
     "gulp": "gulp"

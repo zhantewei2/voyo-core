@@ -197,6 +197,7 @@ export const VoyoInput = function({
         setAttribute.call(currentTarget, k, v);
         currentTarget.updated && currentTarget.updated();
       };
+
       if (defaultValue !== undefined) {
         setValue(key, defaultValue);
         currentTarget._dirtyCheck.isNew(key, defaultValue);
