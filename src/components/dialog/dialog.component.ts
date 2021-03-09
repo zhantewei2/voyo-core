@@ -16,7 +16,7 @@ export interface DialogOpenOpts {
 <div class="voyo-dialog-layout">
     <div class="_layout-bg">
     </div>
-    <main class="voyo-dialog" style="margin-top:40%;">
+    <main class="voyo-dialog">
 <!--        <header class="voyo-dialog-header">-->
 <!--            <slot name="header"></slot>-->
 <!--        </header>-->
@@ -91,7 +91,7 @@ export class DialogComponent extends VoyoComponent {
     this.displayAnimation = new AnimationDisplay(
       this.container,
       "voyo-dialog-animate",
-      "block",
+      "",
       this.dialogBg,
     );
     handleRipple(this.dialogConfirm, { autoSize: true });
