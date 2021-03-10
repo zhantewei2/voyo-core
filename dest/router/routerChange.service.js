@@ -39,7 +39,7 @@ let RouterChangeService = class RouterChangeService {
         };
         history.pushState = (...args) => {
             this.changeNext({
-                targetPath: this.cleanBaseUrl(args[2] || "/"),
+                targetPath: this.getPath(args[2] || "/"),
                 type: "advance",
                 pageCount: 1,
             });
@@ -47,7 +47,7 @@ let RouterChangeService = class RouterChangeService {
         };
         history.replaceState = (...args) => {
             this.changeNext({
-                targetPath: this.cleanBaseUrl(args[2] || "/"),
+                targetPath: this.getPath(args[2] || "/"),
                 type: "replace",
                 pageCount: 1,
             });
@@ -80,7 +80,9 @@ let RouterChangeService = class RouterChangeService {
         this.baseUrl = url;
     }
     getHistoryPath(url) {
-        const matcher = url.match(/https?:\/\/.*?(\/.*$)/);
+        let matcher = url.match(/https?:\/\/.*?(\/.*$)/);
+        if (!matcher)
+            matcher = url.match(/^(\/.*)/);
         if (!matcher)
             return "/";
         const matcherPath = matcher[1];
