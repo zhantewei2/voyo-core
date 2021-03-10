@@ -106,7 +106,7 @@ let RouterChangeService = class RouterChangeService {
     cleanBaseUrl(path) {
         if (!this.baseUrl)
             return path;
-        path = this.getPath(path);
+        path = path || this.getPath(path);
         const baseUrlIndex = path.indexOf(this.baseUrl);
         return baseUrlIndex >= 0 ? path.slice(this.baseUrl.length - 1) : path;
     }

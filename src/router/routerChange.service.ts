@@ -55,7 +55,8 @@ export class RouterChangeService {
     this.baseUrl = url;
   }
   getHistoryPath(url: string) {
-    const matcher: any = url.match(/https?:\/\/.*?(\/.*$)/);
+    let matcher: any = url.match(/https?:\/\/.*?(\/.*$)/);
+    if(!matcher)matcher=url.match(/^(\/.*)/);
     if (!matcher) return "/";
     const matcherPath: string = matcher[1];
     return this.cleanBaseUrl(matcherPath);
@@ -75,7 +76,7 @@ export class RouterChangeService {
   }
   cleanBaseUrl(path: string) {
     if (!this.baseUrl) return path;
-    path = this.getPath(path);
+    path = path||this.getPath(path);
     const baseUrlIndex = path.indexOf(this.baseUrl);
     return baseUrlIndex >= 0 ? path.slice(this.baseUrl.length - 1) : path;
   }
@@ -192,7 +193,7 @@ export class RouterChangeService {
     };
     history.pushState = (...args: any[]) => {
       this.changeNext({
-        targetPath: this.cleanBaseUrl(args[2] || "/"),
+        targetPath: this.getPath(args[2] || "/"),
         type: "advance",
         pageCount: 1,
       });
@@ -200,7 +201,7 @@ export class RouterChangeService {
     };
     history.replaceState = (...args: any[]) => {
       this.changeNext({
-        targetPath: this.cleanBaseUrl(args[2] || "/"),
+        targetPath: this.getPath(args[2] || "/"),
         type: "replace",
         pageCount: 1,
       });
