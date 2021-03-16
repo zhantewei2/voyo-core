@@ -163,7 +163,7 @@ TabBarComponent = __decorate([
     </div>
 </div>
     `,
-        styles: '@-webkit-keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@-webkit-keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}@keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}.voyo-tab-bar-area{position:relative;display:flex}.voyo-tab-bar-thumb{position:absolute;bottom:0;width:2.5rem;height:4px;will-change:transform;opacity:1}.voyo-tab-bar-thumb .voyo-tab-bar-thumb-change{height:100%;width:100%;background:var(--color-primary);top:0;left:0;will-change:transform;opacity:1;border-radius:5px}',
+        styles: '.voyo-tab-bar-area{position:relative;display:flex}.voyo-tab-bar-thumb{position:absolute;bottom:0;width:2.5rem;height:4px;will-change:transform;opacity:1}.voyo-tab-bar-thumb .voyo-tab-bar-thumb-change{height:100%;width:100%;background:var(--color-primary);top:0;left:0;will-change:transform;opacity:1;border-radius:5px}',
     })
 ], TabBarComponent);
 export { TabBarComponent };

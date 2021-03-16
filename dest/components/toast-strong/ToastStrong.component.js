@@ -1,9 +1,9 @@
 import { __decorate } from "tslib";
 import { VoyoComponent } from "../commonComponent";
 import { VoyoDor } from "../BaseComponent";
-import { RwkIySR as completeSvg } from "../../svg.js";
-import { mekIySR as loadColousSvg2 } from "../../svg.js";
-import { QekIySR as loseSvg } from "../../svg.js";
+import { DQuCtDRw as completeSvg } from "../../svg.js";
+import { HWuCtDR as loadColousSvg2 } from "../../svg.js";
+import { CWuCtDR as loseSvg } from "../../svg.js";
 import { IOCAutowired } from "../../ioc";
 import { SETTING_IOC_NAME } from "../../setting";
 import { AnimationDisplay } from "../../utils";
@@ -88,7 +88,7 @@ ToastStrongComponent = __decorate([
   </main>
 </div>
   `,
-        styles: '@-webkit-keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@-webkit-keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}@keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}.voyo-toastStrong-layout{position:fixed;left:0;top:0;width:100%;height:100%;background:transparent;z-index:950}.voyo-toastStrong-layout ._layout-bg{background:transparent;z-index:-1;opacity:.6;position:absolute;top:0;left:0;width:100%;height:100%;transition:all .3s ease-out}.voyo-toastStrong{position:absolute;top:50%;left:50%;will-change:opacity,transform;transform:translate3d(-50%,-50%,0);box-sizing:border-box;align-items:center;background:var(--color-bg-deep3);transform-origin:0 0;display:flex;flex-flow:column;justify-content:center;color:var(--color-font-brand-reverse);padding:.5rem 1rem;box-shadow:0 8px 26px -12px var(--color-bg-deep3);border-radius:var(--radius-base)}.voyo-toastStrong-footer{text-align:center;padding:.5rem;border-radius:var(--radius-large);font-size:var(--size-font-small);font-weight:700}.voyo-toastStrong-article-image{height:4rem;width:4rem}.voyo-toastStrong-container-enter ._layout-bg{opacity:0}.voyo-toastStrong-container-enter .voyo-toastStrong{opacity:0;transform:scale(.9) translate3d(-50%,-50%,0)}.voyo-toastStrong-container-enter-active .voyo-toastStrong,.voyo-toastStrong-container-leave-active .voyo-toastStrong{transition:all .2s ease}.voyo-toastStrong-container-leave-to ._layout-bg{opacity:0}.voyo-toastStrong-container-leave-to .voyo-toastStrong{opacity:0;transform:scale(.9) translate3d(-50%,-50%,0)}',
+        styles: '.voyo-toastStrong-layout{position:fixed;left:0;top:0;width:100%;height:100%;background:transparent;z-index:950}.voyo-toastStrong-layout ._layout-bg{background:transparent;z-index:-1;opacity:.6;position:absolute;top:0;left:0;width:100%;height:100%;transition:all .3s ease-out}.voyo-toastStrong{position:absolute;top:50%;left:50%;will-change:opacity,transform;transform:translate3d(-50%,-50%,0);box-sizing:border-box;align-items:center;background:var(--color-bg-deep3);transform-origin:0 0;display:flex;flex-flow:column;justify-content:center;color:var(--color-font-brand-reverse);padding:.5rem 1rem;box-shadow:0 8px 26px -12px var(--color-bg-deep3);border-radius:var(--radius-base)}.voyo-toastStrong-footer{text-align:center;padding:.5rem;border-radius:var(--radius-large);font-size:var(--size-font-small);font-weight:700}.voyo-toastStrong-article-image{height:4rem;width:4rem}.voyo-toastStrong-container-enter ._layout-bg{opacity:0}.voyo-toastStrong-container-enter .voyo-toastStrong{opacity:0;transform:scale(.9) translate3d(-50%,-50%,0)}.voyo-toastStrong-container-enter-active .voyo-toastStrong,.voyo-toastStrong-container-leave-active .voyo-toastStrong{transition:all .2s ease}.voyo-toastStrong-container-leave-to ._layout-bg{opacity:0}.voyo-toastStrong-container-leave-to .voyo-toastStrong{opacity:0;transform:scale(.9) translate3d(-50%,-50%,0)}',
     })
 ], ToastStrongComponent);
 export { ToastStrongComponent };

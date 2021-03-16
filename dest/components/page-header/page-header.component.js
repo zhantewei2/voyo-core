@@ -3,7 +3,7 @@ import { VoyoComponent } from "../commonComponent";
 import { VoyoDor, VoyoInput } from "../BaseComponent";
 import { IOCAutowired } from "../../ioc";
 import { ROUTER_CHANGE_IOC_NAME } from "../../setting";
-import { RwkIySRw as backSvg } from "../../svg.js";
+import { SQuCtDR as backSvg } from "../../svg.js";
 import { findParentByComponentName, ClassManage, AnimationDisplay, } from "../../utils";
 const headerHeight = 50;
 let PageHeaderComponent = class PageHeaderComponent extends VoyoComponent {
@@ -149,7 +149,7 @@ PageHeaderComponent = __decorate([
     </div>
 </div>
   `,
-        styles: '@-webkit-keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@-webkit-keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}@keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}.voyo-page-header-wrapper{display:flex}.voyo-page-header-wrapper .left,.voyo-page-header-wrapper .right{width:25%;display:inline-flex;align-items:center;padding:0 .5rem}.voyo-page-header-wrapper .title{display:inline-flex;justify-content:center;align-items:center;text-align:center;flex:auto;position:relative}.voyo-page-header-wrapper .title-content{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;display:none}.voyo-page-header-wrapper .title-content.show{display:flex}.voyo-page-header-wrapper .back-img{height:1.2rem}.voyo-page-header-wrapper .voyo-header-title-content-open{display:none}.voyo-animation-fade-enter{opacity:0;transform:translate3d(0,-10%,0)}.voyo-animation-fade-enter-active{transition:all .3s ease}.voyo-animation-fade-enter-to{opacity:1}.voyo-animation-fade-leave-active{opacity:0;transform:translate3d(0,-10%,0);transition:all .3s ease}',
+        styles: '.voyo-page-header-wrapper{display:flex}.voyo-page-header-wrapper .left,.voyo-page-header-wrapper .right{width:25%;display:inline-flex;align-items:center;padding:0 .5rem}.voyo-page-header-wrapper .title{display:inline-flex;justify-content:center;align-items:center;text-align:center;flex:auto;position:relative}.voyo-page-header-wrapper .title-content{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;display:none}.voyo-page-header-wrapper .title-content.show{display:flex}.voyo-page-header-wrapper .back-img{height:1.2rem}.voyo-page-header-wrapper .voyo-header-title-content-open{display:none}.voyo-animation-fade-enter{opacity:0;transform:translate3d(0,-10%,0)}.voyo-animation-fade-enter-active{transition:all .3s ease}.voyo-animation-fade-enter-to{opacity:1}.voyo-animation-fade-leave-active{opacity:0;transform:translate3d(0,-10%,0);transition:all .3s ease}',
     })
 ], PageHeaderComponent);
 export { PageHeaderComponent };

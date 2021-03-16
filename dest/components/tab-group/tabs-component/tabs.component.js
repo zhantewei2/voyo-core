@@ -83,7 +83,7 @@ TabsComponent = __decorate([
     <slot></slot>    
  </voyoc-carousel>
     `,
-        styles: '@-webkit-keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@-webkit-keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}@keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}.carousel-page{position:absolute;top:0;left:0;width:100%;height:100%;contain:strict;will-change:transform;opacity:1;overflow-y:auto}.no-display{display:none!important}.carousel-container{display:block;overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%}',
+        styles: '.carousel-page{position:absolute;top:0;left:0;width:100%;height:100%;contain:strict;will-change:transform;opacity:1;overflow-y:auto}.no-display{display:none!important}.carousel-container{display:block;overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%}',
     })
 ], TabsComponent);
 export { TabsComponent };

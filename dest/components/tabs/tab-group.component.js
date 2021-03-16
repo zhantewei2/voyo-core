@@ -12,7 +12,7 @@ TabGroupComponent = __decorate([
     </voyoc-tabs>
 </div>
   `,
-        styles: '@-webkit-keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@-webkit-keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}@keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}.voyo-tab-group{position:absolute;top:0;left:0;width:100%;height:100%}',
+        styles: '.voyo-tab-group{position:absolute;top:0;left:0;width:100%;height:100%}',
     })
 ], TabGroupComponent);
 export { TabGroupComponent };

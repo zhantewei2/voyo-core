@@ -222,7 +222,7 @@ RefeshComponent = __decorate([
   <slot></slot>
 </article>
     `,
-        styles: '@-webkit-keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@-webkit-keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}@keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}.voyo-refresh-container{position:absolute;top:0;left:0;width:100%;will-change:transform;transform:scale(0);transform-origin:50% 0;display:flex;justify-content:center;align-items:center}.voyo-refresh-down,.voyo-refresh-running,.voyo-refresh-will{display:none;flex-flow:column;justify-content:center}.voyo-refresh-container.__running .voyo-refresh-running,.voyo-refresh-down{display:flex}.voyo-refresh-container.__running .voyo-refresh-down{display:none}.voyo-refresh-container.__will .voyo-refresh-will{display:flex}.voyo-refresh-container.__will .voyo-refresh-down{display:none}',
+        styles: '.voyo-refresh-container{position:absolute;top:0;left:0;width:100%;will-change:transform;transform:scale(0);transform-origin:50% 0;display:flex;justify-content:center;align-items:center}.voyo-refresh-down,.voyo-refresh-running,.voyo-refresh-will{display:none;flex-flow:column;justify-content:center}.voyo-refresh-container.__running .voyo-refresh-running,.voyo-refresh-down{display:flex}.voyo-refresh-container.__running .voyo-refresh-down{display:none}.voyo-refresh-container.__will .voyo-refresh-will{display:flex}.voyo-refresh-container.__will .voyo-refresh-down{display:none}',
     })
 ], RefeshComponent);
 export { RefeshComponent };

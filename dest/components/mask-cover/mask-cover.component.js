@@ -152,7 +152,7 @@ MaskCoverComponent = __decorate([
   </div>
 </div>
   `,
-        styles: '@-webkit-keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@keyframes VoyoMenuShow{0%{transform:scale3d(.5,.5,.5);opacity:.1}}@-webkit-keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}@keyframes VoyoMenuHide{to{transform:scale3d(.5,.5,.5);opacity:0}}.voyo-mask-cover{bottom:0;left:0;width:100%;position:fixed;display:none;z-index:501}.voyo-mask-cover ._layout-bg{background:var(--color-bg-deep);opacity:.6;position:absolute;top:0;left:0;width:100%;height:100%;transition:all .3s ease-out}.voyo-animation-fade-enter{opacity:0;transform:translate3d(0,10%,0)}.voyo-animation-fade-enter-active{transition:all .3s ease}.voyo-animation-fade-enter-to{opacity:1}.voyo-animation-fade-leave-active{opacity:0;transform:translate3d(0,10%,0);transition:all .3s ease}.voyo-mask-cover-content{position:relative}',
+        styles: '.voyo-mask-cover{bottom:0;left:0;width:100%;position:fixed;display:none;z-index:501}.voyo-mask-cover ._layout-bg{background:var(--color-bg-deep);opacity:.6;position:absolute;top:0;left:0;width:100%;height:100%;transition:all .3s ease-out}.voyo-animation-fade-enter{opacity:0;transform:translate3d(0,10%,0)}.voyo-animation-fade-enter-active{transition:all .3s ease}.voyo-animation-fade-enter-to{opacity:1}.voyo-animation-fade-leave-active{opacity:0;transform:translate3d(0,10%,0);transition:all .3s ease}.voyo-mask-cover-content{position:relative}',
     })
 ], MaskCoverComponent);
 export { MaskCoverComponent };
