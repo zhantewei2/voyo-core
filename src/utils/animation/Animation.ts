@@ -95,7 +95,7 @@ export class Animation {
     this.closeEndCb && this.closeEndCb();
   }
   open(delay = delayDefault) {
-    if (this.isEnter || (this.waitTransition && (this.isLeave || this.isEnter)))
+    if (this.isEnter || (this.waitTransition && this.isEnter))
       return;
     if (this.isLeave) this.cancelLeave();
     if (!this.isLeave && this.hasEnter) return;
@@ -119,7 +119,7 @@ export class Animation {
   async close(force?: boolean) {
     if (
       this.isLeave ||
-      (!force && this.waitTransition && (this.isLeave || this.isEnter))
+      (!force && this.waitTransition && this.isLeave)
     )
       return;
     if (!this.isEnter && !this.hasEnter) return;
