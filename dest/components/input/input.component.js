@@ -3,7 +3,7 @@ import { VoyoComponent, VoyoEventEmitter } from "../commonComponent";
 import { VoyoDor, VoyoInput } from "../BaseComponent";
 import { VoyoOutput } from "../Output.decorator";
 import { ClassManage } from "../../utils/ClassManage";
-import { sfmduDR as closeSvg } from "../../svg.js";
+import { AIPlJFR as closeSvg } from "../../svg.js";
 import { ExcuteAfterConnected } from "../utils";
 import { VisualInput } from "./visual-input";
 import { Input } from "./input";

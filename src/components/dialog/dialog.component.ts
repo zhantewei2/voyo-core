@@ -7,7 +7,7 @@ import { VoyoOutput } from "../../components";
 
 export interface DialogOpenOpts {
   header?: string;
-  html?: string;
+  html?: string | HTMLElement;
 }
 
 @VoyoDor({

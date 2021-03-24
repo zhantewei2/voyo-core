@@ -13,15 +13,19 @@ export const toRegistryDialog = () => {
     const setAttr = (key, val) => dialog.setAttribute(key, val);
     return {
         open: (opts) => {
-            showContent = opts.html || "";
             confirmCb = opts.confirm;
             cancelCb = opts.cancel;
+            if (opts.disableConfirm)
+                setAttr("disableConfirm", opts.disableConfirm);
             setAttr("doubleConfirm", opts.doubleConfirm === undefined || opts.doubleConfirm ? 1 : 0);
             setAttr("confirmText", opts.confirmText || confirmText);
             setAttr("cancelText", opts.cancelText || cancelText);
-            dialog.innerHTML = `
-        ${showContent}
-      `;
+            if (typeof opts.html === "string") {
+                dialog.innerHTML = opts.html;
+            }
+            else if (opts.html instanceof HTMLElement) {
+                dialog.appendChild(opts.html);
+            }
             dialog.open(opts);
         },
         close: () => dialog.close()

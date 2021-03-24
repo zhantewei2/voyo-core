@@ -3,7 +3,7 @@ import { ClassManage } from "../../utils";
 import { AnimationDisplay } from "../../utils/animation/AnimationSimple";
 export interface DialogOpenOpts {
     header?: string;
-    html?: string;
+    html?: string | HTMLElement;
 }
 export declare class DialogComponent extends VoyoComponent {
     set headerString(v: string);
