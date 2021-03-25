@@ -11,6 +11,7 @@ import { handleRipple } from "../../utils/ripple";
 import { IOCAutowired } from "../../ioc";
 import { SETTING_IOC_NAME } from "../../setting";
 import { CoreSetting } from "../../core-setting.service";
+import {isIOS} from "@ztwx/utils";
 @VoyoDor({
   template: `
 <slot></slot>
@@ -24,7 +25,6 @@ export class ButtonIconComponent extends VoyoComponent {
     disabled: false,
   };
   @VoyoInput({}) set disabled(v: any) {
-    console.log(v);
     this.rippleOpts.disabled = v || v === "";
   }
   @VoyoInput({ defaultValue: "primary" }) set color(v: ColorVarious) {
@@ -74,9 +74,11 @@ export class ButtonIconComponent extends VoyoComponent {
     handleRipple(this, this.rippleOpts);
     this.awaitQueue.forEach(run => run());
     this.addEventListener("click", (e: MouseEvent) => {
-      setTimeout(() => {
-        this.voyoTap.next(e);
-      }, this.coreSetting.tapTime);
+      isIOS?
+        this.voyoTap.next(e):
+        setTimeout(() => {
+          this.voyoTap.next(e);
+        }, this.coreSetting.tapTime);
     });
   }
 }

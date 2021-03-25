@@ -6,6 +6,7 @@ import { ClassManage } from "../../utils/ClassManage";
 import { handleRipple } from "../../utils/ripple";
 import { IOCAutowired } from "../../ioc";
 import { SETTING_IOC_NAME } from "../../setting";
+import { isIOS } from "@ztwx/utils";
 let ButtonComponent = class ButtonComponent extends VoyoComponent {
     constructor() {
         super(...arguments);
@@ -110,9 +111,7 @@ let ButtonComponent = class ButtonComponent extends VoyoComponent {
         this.addEventListener("click", (e) => {
             if (this.disabled)
                 return;
-            setTimeout(() => {
-                this.voyoTap.next(e);
-            }, this.coreSetting.tapTime);
+            isIOS ? this.voyoTap.next(e) : setTimeout(() => this.voyoTap.next(e), this.coreSetting.tapTime);
         });
     }
 };

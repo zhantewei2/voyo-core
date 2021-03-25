@@ -37,7 +37,6 @@ export const toRegistryDialog=():DialogRegistryResult=>{
 
   const setAttr=(key:string,val:any)=>dialog.setAttribute(key,val);
 
-
   return {
     open:(opts:DialogOpenOpts)=>{
       confirmCb=opts.confirm;

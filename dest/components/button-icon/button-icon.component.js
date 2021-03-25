@@ -6,6 +6,7 @@ import { ClassManage } from "../../utils/ClassManage";
 import { handleRipple } from "../../utils/ripple";
 import { IOCAutowired } from "../../ioc";
 import { SETTING_IOC_NAME } from "../../setting";
+import { isIOS } from "@ztwx/utils";
 let ButtonIconComponent = class ButtonIconComponent extends VoyoComponent {
     constructor() {
         super(...arguments);
@@ -19,7 +20,6 @@ let ButtonIconComponent = class ButtonIconComponent extends VoyoComponent {
         this.connected = false;
     }
     set disabled(v) {
-        console.log(v);
         this.rippleOpts.disabled = v || v === "";
     }
     set color(v) {
@@ -64,9 +64,11 @@ let ButtonIconComponent = class ButtonIconComponent extends VoyoComponent {
         handleRipple(this, this.rippleOpts);
         this.awaitQueue.forEach(run => run());
         this.addEventListener("click", (e) => {
-            setTimeout(() => {
-                this.voyoTap.next(e);
-            }, this.coreSetting.tapTime);
+            isIOS ?
+                this.voyoTap.next(e) :
+                setTimeout(() => {
+                    this.voyoTap.next(e);
+                }, this.coreSetting.tapTime);
         });
     }
 };

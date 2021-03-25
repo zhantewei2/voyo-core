@@ -11,6 +11,7 @@ import { handleRipple } from "../../utils/ripple";
 import { IOCAutowired } from "../../ioc";
 import { SETTING_IOC_NAME } from "../../setting";
 import { CoreSetting } from "../../core-setting.service";
+import { isIOS } from "@ztwx/utils";
 
 @VoyoDor({
   template: `
@@ -116,9 +117,7 @@ export class ButtonComponent extends VoyoComponent {
     delete this.awaitQueue;
     this.addEventListener("click", (e: MouseEvent) => {
       if (this.disabled) return;
-      setTimeout(() => {
-        this.voyoTap.next(e);
-      }, this.coreSetting.tapTime);
+      isIOS?this.voyoTap.next(e):setTimeout(()=>this.voyoTap.next(e),this.coreSetting.tapTime);
     });
   }
 }
