@@ -16,6 +16,7 @@ div{
   position:relative;
   contain: strict;
   user-select: none;
+  touch-action: none;
 }
 .voyo-picker-list-view{
   will-change: transform;

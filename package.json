@@ -40,7 +40,8 @@
     "dest/index.js",
     "dest/ioc/index.js",
     "dest/core-setting.service.js",
-    "dest/ioc/ioc.js"
+    "dest/ioc/ioc.js",
+    "dest/router/index.js"
   ],
   "description": ""
 }

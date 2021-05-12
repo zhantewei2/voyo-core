@@ -4,7 +4,7 @@ import { VoyoOutput } from "../../Output.decorator";
 import { ClassManage } from "../../../utils";
 import { TabsComponent } from "../tabs-component/tabs.component";
 import { TabBarComponent } from "../tab-bar-component/tab-bar.component";
-import { forkJoin } from "rxjs";
+import { forkJoin, of } from "rxjs";
 import { TabGroupLayoutManage } from "./tab-group-layout";
 import { ExcuteAfterConnected } from "../../utils";
 import { TabgroupLayoutType } from "../tab.interface";
@@ -27,8 +27,8 @@ export class TabGroupComponent extends VoyoComponent {
     this.tabs && this.tabs.setIndex(v);
   }
   @VoyoOutput({ event: "input" }) inputChange: VoyoEventEmitter<
-    number
-  > = new VoyoEventEmitter<number>();
+      number
+      > = new VoyoEventEmitter<number>();
   @VoyoInput({ defaultValue: "stiff" }) set layout(v: TabgroupLayoutType) {
     this.excuteAfterConnected.execute(() => {
       this.tabGroupLayoutManage.setLayoutType(v);
@@ -56,7 +56,11 @@ export class TabGroupComponent extends VoyoComponent {
     if (!this.tabs || !this.tabBar) return;
     this.tabBar.classList.add("voyo-tabGroup-tabBar");
     this.tabs.classList.add("voyo-tabGroup-tabs");
-    forkJoin(nodes.map((i: any) => i.voyoConnected)).subscribe(i => {
+    forkJoin(
+        nodes.map((i: any) =>
+            i.voyoConnectCompleted ? of(true) : i.voyoConnected,
+        ),
+    ).subscribe(i => {
       this.tabs.setIndex(this.index);
       this.tabBar.setIndexDirect(this.index);
       this.tabBar.combine = true;

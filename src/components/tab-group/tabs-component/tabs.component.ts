@@ -9,7 +9,7 @@ import { ClassManage } from "../../../utils";
 
 @VoyoDor({
   template: `
- <voyoc-carousel>
+ <voyoc-carousel class="tabs-carousel-container">
     <slot></slot>    
  </voyoc-carousel>
     `,
@@ -23,8 +23,8 @@ export class TabsComponent extends VoyoComponent implements LayoutController {
     this.setIndex(Number(v));
   }
   @VoyoOutput({ event: "input" }) inputChange: VoyoEventEmitter<
-    number
-  > = new VoyoEventEmitter<number>();
+      number
+      > = new VoyoEventEmitter<number>();
   value0: number;
   get value() {
     return this.value0;
@@ -32,8 +32,8 @@ export class TabsComponent extends VoyoComponent implements LayoutController {
   setIndex(v: number, cb?: () => void) {
     if (v === this.value0) return;
     if (
-      !this.carouselEl.isConnected ||
-      this.carouselEl.activeIndex === undefined
+        !this.carouselEl.isConnected ||
+        this.carouselEl.activeIndex === undefined
     ) {
       this.value0 = this.carouselEl.activeOrder = v;
       cb && cb();
@@ -53,9 +53,9 @@ export class TabsComponent extends VoyoComponent implements LayoutController {
    */
   setLayout(type: TabgroupLayoutType) {
     type &&
-      this.excuteAfterConnected.execute(() => {
-        this.classManage.replaceClass("layout", type);
-      });
+    this.excuteAfterConnected.execute(() => {
+      this.classManage.replaceClass("layout", type);
+    });
   }
   classManage: ClassManage;
   carouselEl: CarouselComponent;

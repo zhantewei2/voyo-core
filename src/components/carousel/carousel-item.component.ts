@@ -33,20 +33,20 @@ export class CarouselItemComponent extends VoyoComponent {
     this.style.transform = `translateX(${disX}px)`;
   }
   animateMoveChange: Subject<MoveChangeParams> = new Subject<
-    MoveChangeParams
-  >();
+      MoveChangeParams
+      >();
   listenAnimate(
-    startPos: number,
-    targetPos: number,
-    indexPos: number,
-    moveType: MoveChangeType,
-    progress: number,
+      startPos: number,
+      targetPos: number,
+      indexPos: number,
+      moveType: MoveChangeType,
+      progress: number,
   ) {
     let relativeV = 0;
     progress = progress / 100;
     if (moveType === "to" || moveType === "toIndex") {
       relativeV =
-        (startPos + (targetPos - startPos) * progress) / this.containerWidth;
+          (startPos + (targetPos - startPos) * progress) / this.containerWidth;
     } else if (moveType === "reset") {
       const dis = targetPos - startPos;
       relativeV = (dis - dis * progress) / this.containerWidth;
@@ -64,6 +64,11 @@ export class CarouselItemComponent extends VoyoComponent {
   }
   connectedCallback() {
     this.containerWidth = (this.parentNode as any).offsetWidth;
+    if (!this.containerWidth) {
+      setTimeout(
+          () => (this.containerWidth = (this.parentNode as any).offsetWidth),
+      );
+    }
     this.classList.add("carousel-page");
     if (!this.isVisible) this.classList.add("no-display");
   }
@@ -127,10 +132,10 @@ export class CarouselItemComponent extends VoyoComponent {
   }
 
   animateTo(
-    transitionDuration: number,
-    pos: "mid" | "left" | "right",
-    animateEnd?: () => void,
-    specifyIndex?: boolean,
+      transitionDuration: number,
+      pos: "mid" | "left" | "right",
+      animateEnd?: () => void,
+      specifyIndex?: boolean,
   ) {
     if (pos === this.positionState) return;
     this.animateRun = true;
@@ -142,13 +147,13 @@ export class CarouselItemComponent extends VoyoComponent {
       duration: transitionDuration,
       easing: "easeOutQuart",
       update: (an: any) =>
-        this.listenAnimate(
-          startPos,
-          targetPos,
-          this.switchTransform(this.positionState),
-          specifyIndex ? "toIndex" : "to",
-          an.progress,
-        ),
+          this.listenAnimate(
+              startPos,
+              targetPos,
+              this.switchTransform(this.positionState),
+              specifyIndex ? "toIndex" : "to",
+              an.progress,
+          ),
       complete: (an: any) => {
         this.animateRun = false;
         this.atPosition(pos);
@@ -167,13 +172,13 @@ export class CarouselItemComponent extends VoyoComponent {
       duration,
       easing: "linear",
       update: (an: any) =>
-        this.listenAnimate(
-          startPos,
-          targetPos,
-          targetPos,
-          "reset",
-          an.progress,
-        ),
+          this.listenAnimate(
+              startPos,
+              targetPos,
+              targetPos,
+              "reset",
+              an.progress,
+          ),
       complete: (an: any) => {
         this.animateRun = false;
         animateEnd && animateEnd();
@@ -181,3 +186,4 @@ export class CarouselItemComponent extends VoyoComponent {
     });
   }
 }
+

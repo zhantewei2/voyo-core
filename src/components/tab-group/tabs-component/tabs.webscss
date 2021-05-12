@@ -9,7 +9,7 @@
 .no-display{
   display:none !important;
 }
-.carousel-container{
+.tabs-carousel-container{
   display:block;
   overflow:hidden;
   width:100%;

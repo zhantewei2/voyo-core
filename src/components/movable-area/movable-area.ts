@@ -32,9 +32,9 @@ export class MovableArea {
   moveChange: Subject<number> = new Subject<number>();
 
   constructor(
-    el: HTMLElement,
-    container: HTMLElement,
-    { spaceLeft, moveSpaceLeft, moveSpaceRight, spaceRight }: MovableOpts = {},
+      el: HTMLElement,
+      container: HTMLElement,
+      { spaceLeft, moveSpaceLeft, moveSpaceRight, spaceRight }: MovableOpts = {},
   ) {
     this.el = el;
     this.container = container;
@@ -118,73 +118,73 @@ export class MovableArea {
   handleArea(horizontal: boolean) {
     if (horizontal) {
       this.moveRun = (x: number) =>
-        (this.el.style.transform = `translateX(${x}px)`);
+          (this.el.style.transform = `translateX(${x}px)`);
       this.rightBound = 0 - this.el.offsetWidth + this.container.clientWidth;
     } else {
       this.moveRun = (y: number) =>
-        (this.el.style.transform = `translateY(${y}px)`);
+          (this.el.style.transform = `translateY(${y}px)`);
       this.rightBound = 0 - this.el.offsetHeight + this.container.clientHeight;
     }
 
     forwardTouch(
-      {
-        element: this.el,
-        moment: true,
-        begin: () => {
-          if (this.preventTouchMove) return;
-          if (this.eventModelRun) this.eventModelRun.stop();
-          if (this.animate.isRunning) {
-            this.animate.pause();
-          }
-        },
-        move: ({ perX, perY }) => {
-          if (this.preventTouchMove) return;
-          this.x += horizontal ? perX : perY;
-          if (this.x > 0) {
-            this.useSpaceLeft = this.moveSpaceLeft;
-            this.realX = this.damps(this.x, this.useSpaceLeft);
-          } else if (this.x < this.rightBound) {
-            this.useSpaceRight = this.spaceRight;
-            this.realX =
-              this.rightBound -
-              this.damps(this.rightBound - this.x, this.useSpaceRight);
-          } else {
-            this.realX = this.x;
-            this.resetSpace();
-          }
-          this.move(this.realX);
-        },
-        end: ({ momentSpeed }) => {
-          if (this.preventTouchMove) return;
+        {
+          element: this.el,
+          moment: true,
+          begin: () => {
+            if (this.preventTouchMove) return;
+            if (this.eventModelRun) this.eventModelRun.stop();
+            if (this.animate.isRunning) {
+              this.animate.pause();
+            }
+          },
+          move: ({ perX, perY }) => {
+            if (this.preventTouchMove) return;
+            this.x += horizontal ? perX : perY;
+            if (this.x > 0) {
+              this.useSpaceLeft = this.moveSpaceLeft;
+              this.realX = this.damps(this.x, this.useSpaceLeft);
+            } else if (this.x < this.rightBound) {
+              this.useSpaceRight = this.spaceRight;
+              this.realX =
+                  this.rightBound -
+                  this.damps(this.rightBound - this.x, this.useSpaceRight);
+            } else {
+              this.realX = this.x;
+              this.resetSpace();
+            }
+            this.move(this.realX);
+          },
+          end: ({ momentSpeed }) => {
+            if (this.preventTouchMove) return;
 
-          if (momentSpeed) {
-            this.eventModelRun = this.eventModel.frameRun({
-              advance: momentSpeed > 0,
-              v0: momentSpeed,
-              startJourney: this.x,
-              update: (v, s) => {
-                this.handleAnimateRun(s);
-              },
-              end: () => {
-                if (this.x > 0) {
-                  this.leftBack();
-                } else if (this.x < this.rightBound) {
-                  this.rightBack();
-                } else {
-                  this.resetSpace();
-                }
-              },
-            });
-          } else if (this.x > 0) {
-            this.leftBack();
-          } else if (this.x < this.rightBound) {
-            this.rightBack();
-          } else {
-            this.resetSpace();
-          }
+            if (momentSpeed) {
+              this.eventModelRun = this.eventModel.frameRun({
+                advance: momentSpeed > 0,
+                v0: momentSpeed,
+                startJourney: this.x,
+                update: (v, s) => {
+                  this.handleAnimateRun(s);
+                },
+                end: () => {
+                  if (this.x > 0) {
+                    this.leftBack();
+                  } else if (this.x < this.rightBound) {
+                    this.rightBack();
+                  } else {
+                    this.resetSpace();
+                  }
+                },
+              });
+            } else if (this.x > 0) {
+              this.leftBack();
+            } else if (this.x < this.rightBound) {
+              this.rightBack();
+            } else {
+              this.resetSpace();
+            }
+          },
         },
-      },
-      horizontal,
+        horizontal,
     );
   }
   handleAnimateRun = (runX: number) => {
@@ -192,9 +192,9 @@ export class MovableArea {
     if (runX >= this.leftBound) {
       this.realX = this.damps(this.x, this.useSpaceLeft);
       if (
-        this.realX > this.spaceLeft - this.spaceDis &&
-        this.eventModelRun &&
-        this.eventModelRun.isRunning
+          this.realX > this.spaceLeft - this.spaceDis &&
+          this.eventModelRun &&
+          this.eventModelRun.isRunning
       ) {
         this.eventModelRun.stop();
       } else {
@@ -202,12 +202,12 @@ export class MovableArea {
       }
     } else if (runX <= this.rightBound) {
       this.realX =
-        this.rightBound -
-        this.damps(this.rightBound - this.x, this.useSpaceRight);
+          this.rightBound -
+          this.damps(this.rightBound - this.x, this.useSpaceRight);
       if (
-        this.realX < this.rightBound - this.spaceRight + this.spaceDis &&
-        this.eventModelRun &&
-        this.eventModelRun.isRunning
+          this.realX < this.rightBound - this.spaceRight + this.spaceDis &&
+          this.eventModelRun &&
+          this.eventModelRun.isRunning
       ) {
         this.eventModelRun.stop();
       } else {

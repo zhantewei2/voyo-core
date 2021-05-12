@@ -3,7 +3,7 @@ import { VoyoDor, VoyoInput } from "../BaseComponent";
 import { VoyoOutput } from "../Output.decorator";
 import { CarouselItemComponent } from "./carousel-item.component";
 import { CarouselListManage } from "./carousel-list-manage";
-import { EndOpts, horizontalTouch, MoveOpts } from "../../utils/hammer";
+
 import { CarouselMoveManage } from "./carousel-move-manage";
 import { MoveChangeParams } from "./carousel.interface";
 
@@ -35,11 +35,10 @@ export class CarouselComponent extends VoyoComponent {
   transitionDuration: number;
   container: HTMLElement;
   carouselListManage: CarouselListManage<CarouselItemComponent>;
-
   carouselMoveManage: CarouselMoveManage = new CarouselMoveManage(
-    this,
-    // @ts-ignore
-    this.transitionDuration,
+      this,
+      // @ts-ignore
+      this.transitionDuration,
   );
   created() {
     this.container = this.shadowRoot.querySelector("#carousel-main");
@@ -48,8 +47,8 @@ export class CarouselComponent extends VoyoComponent {
   @VoyoOutput({ event: "activeOrderChange" })
   activeOrderChange: VoyoEventEmitter<number> = new VoyoEventEmitter();
   @VoyoOutput({ event: "touchChange" }) touchChange: VoyoEventEmitter<
-    MoveChangeParams
-  > = new VoyoEventEmitter<MoveChangeParams>();
+      MoveChangeParams
+      > = new VoyoEventEmitter<MoveChangeParams>();
   @VoyoInput({ name: "activeOrder" })
   set activeOrder(i: number) {
     i = Number(i);
@@ -70,11 +69,11 @@ export class CarouselComponent extends VoyoComponent {
   itemList: CarouselItemComponent[];
   getItemList(nodes: Node[]) {
     this.itemList = nodes
-      .filter(i => i instanceof CarouselItemComponent)
-      .map((i: any, index) => {
-        i.index = index;
-        return i;
-      }) as any;
+        .filter(i => i instanceof CarouselItemComponent)
+        .map((i: any, index) => {
+          i.index = index;
+          return i;
+        }) as any;
   }
   /**
    * can not support dynamic inject component
@@ -94,9 +93,9 @@ export class CarouselComponent extends VoyoComponent {
       slotChild && this.getItemList(slotChild.assignedNodes());
     }
     this.carouselListManage = new CarouselListManage<CarouselItemComponent>(
-      this.itemList,
-      this.activeIndex,
-      this.infiniteCarousel,
+        this.itemList,
+        this.activeIndex,
+        this.infiniteCarousel,
     );
     this.carouselListManage.activeIndexChange.subscribe(index => {
       this.activeOrderChange.next(index);
@@ -120,8 +119,8 @@ export class CarouselComponent extends VoyoComponent {
   }
 
   visbileIndex(
-    index: number,
-    cb?: (i: CarouselItemComponent, position: "left" | "mid" | "right") => void,
+      index: number,
+      cb?: (i: CarouselItemComponent, position: "left" | "mid" | "right") => void,
   ) {
     const { item, position } = this.carouselListManage.getItem(index);
     item.visible();
@@ -145,43 +144,43 @@ export class CarouselComponent extends VoyoComponent {
     }
   }
   animateAdvance(
-    currentItem: CarouselItemComponent,
-    nextItem: CarouselItemComponent,
-    cb?: () => void,
-    transitionDuration: number = this.transitionDuration,
+      currentItem: CarouselItemComponent,
+      nextItem: CarouselItemComponent,
+      cb?: () => void,
+      transitionDuration: number = this.transitionDuration,
   ) {
     this.moveRunning = true;
     currentItem.atMid();
     nextItem.atLeft();
     currentItem.animateTo(
-      transitionDuration,
-      "right",
-      () => {
-        this.moveRunning = false;
-        cb && cb();
-      },
-      true,
+        transitionDuration,
+        "right",
+        () => {
+          this.moveRunning = false;
+          cb && cb();
+        },
+        true,
     );
     nextItem.animateTo(transitionDuration, "mid");
   }
   animateBack(
-    currentItem: CarouselItemComponent,
-    nextItem: CarouselItemComponent,
-    cb?: () => void,
-    transitionDuration: number = this.transitionDuration,
+      currentItem: CarouselItemComponent,
+      nextItem: CarouselItemComponent,
+      cb?: () => void,
+      transitionDuration: number = this.transitionDuration,
   ) {
     this.moveRunning = true;
     currentItem.atMid();
     nextItem.atRight();
     nextItem.animateTo(transitionDuration, "mid");
     currentItem.animateTo(
-      transitionDuration,
-      "left",
-      () => {
-        this.moveRunning = false;
-        cb && cb();
-      },
-      true,
+        transitionDuration,
+        "left",
+        () => {
+          this.moveRunning = false;
+          cb && cb();
+        },
+        true,
     );
   }
 
@@ -249,3 +248,4 @@ export class CarouselComponent extends VoyoComponent {
     }
   }
 }
+
