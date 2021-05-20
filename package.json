@@ -1,9 +1,13 @@
 {
   "name": "@voyo/core",
-  "version": "1.0.2",
+  "version": "0.0.1-aplha.1",
   "main": "dest/index.js",
   "scripts": {
     "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhantewei2/voyo-core"
   },
   "author": "",
   "license": "ISC",
