@@ -48,6 +48,9 @@ let CarouselItemComponent = class CarouselItemComponent extends VoyoComponent {
     }
     connectedCallback() {
         this.containerWidth = this.parentNode.offsetWidth;
+        if (!this.containerWidth) {
+            setTimeout(() => (this.containerWidth = this.parentNode.offsetWidth));
+        }
         this.classList.add("carousel-page");
         if (!this.isVisible)
             this.classList.add("no-display");

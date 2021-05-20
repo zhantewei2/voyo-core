@@ -79,11 +79,11 @@ __decorate([
 TabsComponent = __decorate([
     VoyoDor({
         template: `
- <voyoc-carousel>
+ <voyoc-carousel class="tabs-carousel-container">
     <slot></slot>    
  </voyoc-carousel>
     `,
-        styles: '.carousel-page{position:absolute;top:0;left:0;width:100%;height:100%;contain:strict;will-change:transform;opacity:1;overflow-y:auto}.no-display{display:none!important}.carousel-container{display:block;overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%}',
+        styles: '.carousel-page{position:absolute;top:0;left:0;width:100%;height:100%;contain:strict;will-change:transform;opacity:1;overflow-y:auto}.no-display{display:none!important}.tabs-carousel-container{display:block;overflow:hidden;position:absolute;top:0;left:0;width:100%;height:100%}',
     })
 ], TabsComponent);
 export { TabsComponent };

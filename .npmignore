@@ -2,9 +2,11 @@ src/
 plugins/
 gulpfile.js
 package-lock.json
-/test.js
+test.js
 tsconfig.json
 .browserslistrc
 .idea/
 postcss.config.js
 node_modules/
+.vscode/
+.DS_Store

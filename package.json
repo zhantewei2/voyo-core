@@ -1,6 +1,6 @@
 {
   "name": "@voyo/core",
-  "version": "0.0.1-aplha.1",
+  "version": "0.0.1-alpha.1",
   "main": "dest/index.js",
   "scripts": {
     "gulp": "gulp"
