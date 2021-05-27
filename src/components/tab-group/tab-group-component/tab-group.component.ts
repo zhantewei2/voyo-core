@@ -52,7 +52,7 @@ export class TabGroupComponent extends VoyoComponent {
       }
     });
     this.tabGroupLayoutManage.foundTabGroupChild(slotNodes);
-
+    
     if (!this.tabs || !this.tabBar) return;
     this.tabBar.classList.add("voyo-tabGroup-tabBar");
     this.tabs.classList.add("voyo-tabGroup-tabs");
@@ -61,20 +61,23 @@ export class TabGroupComponent extends VoyoComponent {
             i.voyoConnectCompleted ? of(true) : i.voyoConnected,
         ),
     ).subscribe(i => {
+      
       this.tabs.setIndex(this.index);
       this.tabBar.setIndexDirect(this.index);
       this.tabBar.combine = true;
-
       this.tabs.progressChange.subscribe((progress: any) => {
         this.tabBar.pointerMoveChange.next(progress);
       });
+      
       this.tabs.inputChange.subscribe((i: number) => {
         this.tabBar.setIndexDirect(i);
         this.inputChange.next(i);
       });
+      
       this.tabBar.willChange.subscribe(({ value, cb }: any) => {
         this.tabs.setIndex(value, cb);
       });
+      
     });
     this.excuteAfterConnected.connect();
   }

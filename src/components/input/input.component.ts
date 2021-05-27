@@ -9,6 +9,7 @@ import { ExcuteAfterConnected } from "../utils";
 import { VisualInput } from "./visual-input";
 import { Input, InputInterface, visualInputType } from "./input";
 import { TapInput } from "./tap-input";
+import {isMobile} from "@ztwx/utils";
 @VoyoDor({
   template: `
 <main class="voyo-input-wrapper">
@@ -160,7 +161,7 @@ export class InputComponent extends VoyoComponent {
         "__clearable",
         this.clearable ? isClearable : false,
       );
-    }, 10);
+    }, isMobile?20:200);
     this.isClearable = isClearable;
   }
   isFocus0 = false;
@@ -177,14 +178,12 @@ export class InputComponent extends VoyoComponent {
     this.isFocus = true;
     this.input.toFocus();
     this.classManage.toggleClass("__focus", true);
-    // this.focusEvent.next();
   }
   blur() {
     if (!this.isFocus) return;
     this.isFocus = false;
     this.input.toBlur();
     this.classManage.toggleClass("__focus", false);
-    // this.blurEvent.next();
   }
   toFocus() {
     this.excuteAfterConnected.execute(() => {
