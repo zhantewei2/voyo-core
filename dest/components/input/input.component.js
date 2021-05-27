@@ -3,11 +3,12 @@ import { VoyoComponent, VoyoEventEmitter } from "../commonComponent";
 import { VoyoDor, VoyoInput } from "../BaseComponent";
 import { VoyoOutput } from "../Output.decorator";
 import { ClassManage } from "../../utils/ClassManage";
-import { VDAnXqT as closeSvg } from "../../svg.js";
+import { XnqWzeT as closeSvg } from "../../svg.js";
 import { ExcuteAfterConnected } from "../utils";
 import { VisualInput } from "./visual-input";
 import { Input } from "./input";
 import { TapInput } from "./tap-input";
+import { isMobile } from "@ztwx/utils";
 let InputComponent = class InputComponent extends VoyoComponent {
     constructor() {
         super(...arguments);
@@ -105,7 +106,7 @@ let InputComponent = class InputComponent extends VoyoComponent {
             return;
         setTimeout(() => {
             this.classManage.toggleClass("__clearable", this.clearable ? isClearable : false);
-        }, 10);
+        }, isMobile ? 20 : 200);
         this.isClearable = isClearable;
     }
     set isFocus(v) {
@@ -122,7 +123,6 @@ let InputComponent = class InputComponent extends VoyoComponent {
         this.isFocus = true;
         this.input.toFocus();
         this.classManage.toggleClass("__focus", true);
-        // this.focusEvent.next();
     }
     blur() {
         if (!this.isFocus)
@@ -130,7 +130,6 @@ let InputComponent = class InputComponent extends VoyoComponent {
         this.isFocus = false;
         this.input.toBlur();
         this.classManage.toggleClass("__focus", false);
-        // this.blurEvent.next();
     }
     toFocus() {
         this.excuteAfterConnected.execute(() => {
