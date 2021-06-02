@@ -54,7 +54,7 @@ export declare class NavDataHandler {
      * @param navListItems
      * @param path
      */
-    collapseNavCardFromPath(path: string): void;
+    collapseNavCardFromPath(path: string): undefined | NavListItem;
     /**
      * 展开 parent item
      * @param i

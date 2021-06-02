@@ -146,6 +146,7 @@ export class NavDataHandler {
         //展开parent
         this.openParents(item);
         item.active = true;
+        return item;
         // this.checkAndResetCurrentNavData(item);
     }
     /**

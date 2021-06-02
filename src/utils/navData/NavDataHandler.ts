@@ -131,7 +131,7 @@ export class NavDataHandler{
      * @param navListItems
      * @param path
      */
-    collapseNavCardFromPath(path:string):void{
+    collapseNavCardFromPath(path:string):undefined|NavListItem{
         /**
          * 阻止 导航菜单的点击事件触发的展开
          */
@@ -160,7 +160,7 @@ export class NavDataHandler{
         //展开parent
         this.openParents(item);
         item.active=true;
-
+        return item;
         // this.checkAndResetCurrentNavData(item);
     }
 
