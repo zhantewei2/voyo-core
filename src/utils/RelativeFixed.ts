@@ -42,7 +42,7 @@ export class RelativeFixed{
     const getTop=(pos:Position):number=>{
       if(pos=="top")return obj.rect.top-this.space-targetH;
       if(pos=="left")return obj.centerY-targetH/2;
-      if(pos=="right")return obj.centerY+targetH/2;
+      if(pos=="right")return obj.centerY-targetH/2;
       return obj.rect.bottom+this.space;
     };
     const getLeft=(pos:Position):number=>{

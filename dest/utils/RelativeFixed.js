@@ -40,7 +40,7 @@ export class RelativeFixed {
             if (pos == "left")
                 return obj.centerY - targetH / 2;
             if (pos == "right")
-                return obj.centerY + targetH / 2;
+                return obj.centerY - targetH / 2;
             return obj.rect.bottom + this.space;
         };
         const getLeft = (pos) => {

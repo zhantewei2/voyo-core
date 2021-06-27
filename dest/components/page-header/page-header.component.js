@@ -3,7 +3,7 @@ import { VoyoComponent } from "../commonComponent";
 import { VoyoDor, VoyoInput } from "../BaseComponent";
 import { IOCAutowired } from "../../ioc";
 import { ROUTER_CHANGE_IOC_NAME } from "../../setting";
-import { sctdGrT as backSvg } from "../../svg.js";
+import { VvajnpTw as backSvg } from "../../svg.js";
 import { findParentByComponentName, ClassManage, AnimationDisplay, } from "../../utils";
 const headerHeight = 50;
 let PageHeaderComponent = class PageHeaderComponent extends VoyoComponent {
